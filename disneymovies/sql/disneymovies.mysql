@@ -1,0 +1,10 @@
+-- Create user database.
+CREATE DATABASE disneymovies;
+-- Create local user.
+CREATE USER 'disneymovies'@'localhost' IDENTIFIED BY 'disneymovies';
+GRANT ALL PRIVILEGES ON disneymovies.* TO 'disneymovies'@'localhost' WITH GRANT OPTION;
+-- Create remote user.
+CREATE USER 'disneymovies'@'%' IDENTIFIED BY 'disneymovies';
+GRANT ALL PRIVILEGES ON disneymovies.* TO 'disneymovies'@'%' WITH GRANT OPTION;
+-- Tell the server to reload the GRANT TABLES.
+FLUSH PRIVILEGES;

@@ -1,0 +1,1 @@
+mysqldump -u disneymovies -pdisneymovies -c -e disneymovies > disneymovies_database.sql
