@@ -1,0 +1,8 @@
+youtube-dl -o "%(title)s.%(ext)s" $1 https://www.youtube.com/watch?v=QtCdk459NFg #Part 1
+youtube-dl -o "%(title)s.%(ext)s" $1 https://www.youtube.com/watch?v=UXcoc6zsOow #Part 2
+youtube-dl -o "%(title)s.%(ext)s" $1 https://www.youtube.com/watch?v=EcQ6MJc10wo #Part 3
+youtube-dl -o "%(title)s.%(ext)s" $1 https://www.youtube.com/watch?v=aj9x5b5PSGM #Part 4
+youtube-dl -o "%(title)s.%(ext)s" $1 https://www.youtube.com/watch?v=uin9n9P4hjM #Part 5
+youtube-dl -o "%(title)s.%(ext)s" $1 https://www.youtube.com/watch?v=-yQamc68g0g #Part 6
+youtube-dl -o "%(title)s.%(ext)s" $1 https://www.youtube.com/watch?v=E00LPgV6N48 #Part 7
+youtube-dl -o "%(title)s.%(ext)s" $1 https://www.youtube.com/watch?v=Iy5KH8tHsrA #Part 8
