@@ -1,0 +1,137 @@
+
+	.thetip0{
+		margin-left:auto;
+		margin-right:auto;
+		margin-top:auto;
+		/*width:250px; */
+		background-color:#ffffff;
+		color:#000000;
+		padding:auto;
+		text-align:left;
+		}
+
+	.thetip1{
+		margin-left:auto;
+		margin-right:auto;
+		margin-top:auto;
+		/*width:250px;*/
+		background-color:#ffffff;
+		color:#000000;
+		padding:auto;
+		text-align:left;
+		}
+
+	.thetip2{
+		margin-left:auto;
+		margin-right:auto;
+		margin-top:auto;
+		/*width:250px;*/
+		background-color:#ffffff;
+		color:#000000;
+		padding:auto;
+		text-align:left;
+		}
+
+	.thetip3{
+		margin-left:auto;
+		margin-right:auto;
+		margin-top:auto;
+		/*width:250px;*/
+		background-color:#ffffff;
+		color:#000000;
+		padding:auto;
+		text-align:center;
+		}
+
+	#thetip{
+		margin-left:auto;
+		margin-right:auto;
+		margin-top:100px;
+		/*width:250px;*/
+		background-color:#ffffff;
+		color:#000000;
+		padding:auto;
+		text-align:left;
+		}
+
+	#tooltip00{
+		position:absolute; /*Allows it to be anywhere on the page without interrupting any other elements on the page.*/
+		z-index:2;
+		width:auto;
+		padding:5px;
+		background-color:#ffff00;
+		border:2px solid #000000;
+		border-radius:15px; //Rounding the corners on the box.
+		-moz-border-radius:15px; /*Firefox*/
+
+		display:none; /*Hide from page so that it will only be shown on hover.*/
+
+		}
+
+	#tooltip01{
+		position:absolute; /*Allows it to be anywhere on the page without interrupting any other elements on the page.*/
+		z-index:2;
+		width:auto;
+		padding:5px;
+		background-color:#ff0000;
+		border:2px solid #000000;
+		border-radius:15px; //Rounding the corners on the box.
+		-moz-border-radius:15px; /*Firefox*/
+
+		display:none; /*Hide from page so that it will only be shown on hover.*/
+
+		}
+
+	#tooltip02{
+		position:absolute; /*Allows it to be anywhere on the page without interrupting any other elements on the page.*/
+		z-index:2;
+		width:auto;
+		padding:5px;
+		background-color:#00ff00;
+		border:2px solid #000000;
+		border-radius:15px; //Rounding the corners on the box.
+		-moz-border-radius:15px; /*Firefox*/
+
+		display:none; /*Hide from page so that it will only be shown on hover.*/
+
+		}
+
+	#tooltip03{
+		position:absolute; /*Allows it to be anywhere on the page without interrupting any other elements on the page.*/
+		z-index:2;
+		width:auto;
+		padding:5px;
+		background-color:#5f9ea0;
+		border:2px solid #000000;
+		border-radius:15px; //Rounding the corners on the box.
+		-moz-border-radius:15px; /*Firefox*/
+
+		display:none; /*Hide from page so that it will only be shown on hover.*/
+
+		}
+
+	td.thetip0{
+		background-color:#c0c0c0;
+		border:2px solid #e0e0e0;
+	}
+
+	table,td,th
+	{
+		border:1px solid black;
+	}
+
+	table
+	{
+		width:50%;
+		border-collapse:collapse;
+	}
+
+	th
+	{
+		height:50px;
+	}
+
+	#redthis
+	{
+		color:red;
+	}
