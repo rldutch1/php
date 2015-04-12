@@ -14,6 +14,6 @@ function generateRandomString($length = 10) {
 
 // Echo the random string.
 // Optionally, you can give it a desired string length.
-echo generateRandomString(), "\r\n";
+echo "The random string is: ", generateRandomString(), "\r\n";
 
 ?>
