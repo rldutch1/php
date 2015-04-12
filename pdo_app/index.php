@@ -1,4 +1,5 @@
 <?php
+echo "<br /><br /><a href='index1.php'>Page 2</a><br />";
 
 include_once('connect_pdo.php');
 
@@ -34,7 +35,6 @@ while($r = $query2->fetch(PDO::FETCH_OBJ)) { //Iteration through the objects in 
 		echo $r->message, '<br />';//Notice how "message" is addressed directly instead of wrapping it in brackets and single quotes.
 }
 
-echo "<br /><br /><a href='index1.php'>Page 2</a><br />";
 
 ?>
 

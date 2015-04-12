@@ -1,4 +1,5 @@
 <?php
+echo "<br /><br /><a href='index3.php'>Page 4</a><br />";
 
 include_once('connect_pdo.php');
 
@@ -16,7 +17,8 @@ $query0 = $handler->query('select * from guestbook');
 		echo 'There are no results.';
 	}
 
-echo "<br /><br /><a href='index3.php'>Page 4</a><br />";
+	echo "<pre>",print_r($results),"</pre>";
+
 
 ?>
 

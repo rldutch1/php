@@ -1,9 +1,12 @@
 <?php
+echo "<br /><br /><a href='index5.php'>Page 6</a><br />";
 
 include_once('connect_pdo.php');
 
-echo '<hr /><br />Part 7 of 8 - Prepared statements to insert data into table. <br />';
-echo '. <br />';
+echo '<hr /><br />Part 7 of 8 - Getting last insert ID. <br />';
+echo 'Using the lastInsertID() method. Each time this page is opened/refreshed it will <br />';
+echo 'insert a row to the guestbook table then use lastInsertID() to grab the id of the last <br />';
+echo 'inserted ID. <br />';
 
 //$name = $_POST['name']; //Posted from a form.
 //$message = $_POST['message']; //Posted from a form.
@@ -48,6 +51,5 @@ $query = $handler->prepare($sql); //The $sql statement is prepared but not execu
 
 	echo $handler->lastInsertID(); //The last insert id comes from the $handler in the connect.php file.
 
-echo "<br /><br /><a href='index.php'>Page 1</a><br />";
 
 ?>

@@ -1,4 +1,5 @@
 <?php
+echo "<br /><br /><a href='index2.php'>Page 3</a><br />";
 
 include_once('connect_pdo.php');
 require('guestbook_class.php'); //Removed the Guestbook class section below and put it in a separate file.
@@ -33,7 +34,6 @@ $query0->setFetchMode(PDO::FETCH_CLASS, 'GuestbookEntry'); //Fetching the Guestb
 	echo $r->entry, '<br />'; //Output the sentence created in the class.
 	}
 
-echo "<br /><br /><a href='index2.php'>Page 3</a><br />";
 
 ?>
 
