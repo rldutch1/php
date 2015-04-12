@@ -30,10 +30,11 @@ echo '<pre>', print_r($r), '</pre>'; //This will print whatever is fetched.
 
 //Method #3:
 echo '<hr /><br />Method 3: Using $r = $query2->fetch(PDO::FETCH_OBJ)<br />echo $r->message<br />Result: <br />';
-while($r = $query2->fetch(PDO::FETCH_OBJ)) { //Iteration through the objects in the anonymous object.
+while($r = $query2->fetch(PDO::FETCH_OBJ)) { //Iteration through the objects in the anonymous object. 2:50 part 3 of 8.
 		echo $r->message, '<br />';//Notice how "message" is addressed directly instead of wrapping it in brackets and single quotes.
 }
 
+echo "<br /><br /><a href='index1.php'>Page 2</a><br />";
 
 ?>
 
