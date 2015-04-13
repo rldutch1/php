@@ -1,3 +1,5 @@
+#Uses Youtube-dl to download the videos.
+
 youtube-dl -o "%(title)s.%(ext)s" $1 https://www.youtube.com/watch?v=QtCdk459NFg #Part 1
 youtube-dl -o "%(title)s.%(ext)s" $1 https://www.youtube.com/watch?v=UXcoc6zsOow #Part 2
 youtube-dl -o "%(title)s.%(ext)s" $1 https://www.youtube.com/watch?v=EcQ6MJc10wo #Part 3
