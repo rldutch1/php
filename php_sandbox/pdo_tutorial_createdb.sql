@@ -1,4 +1,4 @@
--- http://en.memory-alpha.wikia.com/wiki/Kira_Nerys
+
 CREATE DATABASE testdb;
 USE testdb;
 
