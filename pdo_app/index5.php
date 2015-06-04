@@ -7,7 +7,7 @@ echo 'Using the rowCount() method. <br />';
 
 $query = $handler->query('select * from guestbook');
 if($query->rowCount()) {
-		//echo "Number of rows: ", $query->rowCount();
+		echo "Number of rows: ", $query->rowCount(),"<br />";
 		while($r = $query->fetch(PDO::FETCH_OBJ)){
 			echo $r->name, " ", $r->message, " ", $r->posted, "<br />";
 		}
