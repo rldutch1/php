@@ -39,8 +39,8 @@ class User { //
 }
 
 $rob = new User(46);
-echo $rob->age;
-echo $rob->getPassword('1getit');
+echo $rob->age . '<br />';
+echo $rob->getPassword('getit') . '<br />';
 
 
 ?>

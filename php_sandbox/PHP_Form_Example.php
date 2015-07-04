@@ -9,34 +9,6 @@
 <body>
 <p>
 <a href='http://www.w3schools.com/php/php_form_complete.asp'>PHP 5 Complete Form Example</a><br />
-This shows how to keep the values in the input fields when the user hits the submit button.<br />
-
-PHP - Keep The Values in The Form<br />
-To show the values in the input fields after the user hits the submit button, <br />
-we add a little PHP script inside the value attribute of the following input fields: <br />
-name, email, and website. In the comment textarea field, we put the script between the <br />
-'textarea' and '/textarea' tags. The little script outputs the value of the $name, <br />
-$email, $website, and $comment variables.<br />
-
-Then, we also need to show which radio button that was checked. <br />
-For this, we must manipulate the checked attribute (not the value attribute for radio buttons):<br />
-<br />
-Name: <input type="text" name="name" value="<?php echo $name;?>">
-<br />
-E-mail: <input type="text" name="email" value="<?php echo $email;?>">
-<br />
-Website: <input type="text" name="website" value="<?php echo $website;?>">
-<br />
-Comment: <textarea name="comment" rows="5" cols="40"><?php echo $comment;?></textarea>
-<br />
-Gender:
-<input type="radio" name="gender"
-<?php if (isset($gender) && $gender=="female") echo "checked";?>
-value="female">Female
-<input type="radio" name="gender"
-<?php if (isset($gender) && $gender=="male") echo "checked";?>
-value="male">Male
-</p>
 
 <?php
 // define variables and set to empty values
