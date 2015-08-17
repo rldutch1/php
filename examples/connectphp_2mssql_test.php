@@ -18,8 +18,13 @@
 //        echo json_encode(array("imagelist" => $arraydata));
 
 //	$servername='ALIENWARE';
+
+//Turn on error reporting for this document.
 ini_set('display_errors',1);
 error_reporting(E_ALL);
+
+//Turn off error reporting for this document.
+//	error_reporting(0);
 
 //https://www.youtube.com/watch?v=72XCFF4YiOw  (8:10 minute mark).
 //This isn't working yet.
