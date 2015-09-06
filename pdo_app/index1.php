@@ -54,6 +54,12 @@ $query0->setFetchMode(PDO::FETCH_CLASS, 'GuestbookEntry'); //Fetching the Guestb
 	echo $r->entry, '<br />'; //Output the sentence created in the class.
 	}
 
+$query1 = $handler->query('select max(id) maxid from guestbook');
+$query1->setFetchMode(PDO::FETCH_CLASS, 'GuestbookEntry1'); //Fetching the Guestbook class above.
+	while($r = $query0->fetch()) {
+	//echo '<pre>', print_r($r), '</pre><br />'; //Shows all of the selected fields and the manually created $entry.
+	echo $r->entry1, '<br />'; //Output the sentence created in the class.
+	}
 
 ?>
 
