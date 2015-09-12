@@ -1,0 +1,19 @@
+CREATE DATABASE databaseimage;
+USE databaseimage;
+CREATE TABLE `blobimages` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) NOT NULL,
+  `filetype` varchar(128) NOT NULL,
+  `image` longblob NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM; --Could be INNODB
+
+--Create local and remote database username called (databaseimage) and password (databaseimage1).
+-- Create local user.
+CREATE USER 'databaseimage'@'localhost' IDENTIFIED BY 'databaseimage1';
+GRANT ALL PRIVILEGES ON databaseimage.* TO 'databaseimage'@'localhost' WITH GRANT OPTION;
+-- Create remote user.
+CREATE USER 'databaseimage'@'%' IDENTIFIED BY 'databaseimage1';
+GRANT ALL PRIVILEGES ON databaseimage.* TO 'databaseimage'@'%' WITH GRANT OPTION;
+-- Tell the server to reload the GRANT TABLES.
+FLUSH PRIVILEGES;

@@ -1,0 +1,27 @@
+-- http://www.developer.com/net/asp/article.php/10917_3761486_2/Working-with-Binary-Large-Objects-BLOBs-Using-SQL-Server-and-ADONET.htm
+
+USE MASTER;
+CREATE DATABASE databaseimage;
+USE databaseimage;
+CREATE TABLE blobimages (
+  id int identity(1,1) primary key,
+  name varchar(255) NOT NULL,
+  filetype varchar(128) NOT NULL,
+  image varbinary(max) NOT NULL
+)
+
+/*EXAMPLE CREATE USER STATEMENT
+CREATE LOGIN AbolrousHazem
+    WITH PASSWORD = '340$Uuxwp7Mcxo7Khy';
+USE AdventureWorks2012;
+GO
+CREATE USER AbolrousHazem FOR LOGIN AbolrousHazem;
+GO
+*/
+
+CREATE LOGIN databaseimage
+    WITH PASSWORD = 'databaseimage1';
+USE databaseimage;
+
+CREATE USER databaseimage FOR LOGIN databaseimage;
+
