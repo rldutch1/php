@@ -1,6 +1,7 @@
 -- Create user database.
 CREATE DATABASE disneymovies;
 -- Create local user.
+-- use mysql;
 CREATE USER 'disneymovies'@'localhost' IDENTIFIED BY 'disneymovies';
 GRANT ALL PRIVILEGES ON disneymovies.* TO 'disneymovies'@'localhost' WITH GRANT OPTION;
 -- Create remote user.
