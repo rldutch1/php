@@ -11,9 +11,10 @@
 
 $filename = $argv[0];
 $username = $argv[1];
-$str = $argv[2];
-$password = password_hash($str, PASSWORD_DEFAULT);
-echo $password . "\r\n";
-echo "update webusers set password = '" . $password . "' where username = '" . $str . "';\r\n";
+//$str = $argv[2];
+//$password = password_hash($str, PASSWORD_DEFAULT);
+$password = password_hash($argv[2], PASSWORD_DEFAULT);
+echo "The username is: " . $username . " and password is: " . $password . "\r\n";
+echo "update webusers set password = '" . $password . "' where username = '" . $username . "';\r\n";
 
 ?>
