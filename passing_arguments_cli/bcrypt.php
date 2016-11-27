@@ -11,10 +11,20 @@
 
 $filename = $argv[0];
 $username = $argv[1];
-//$str = $argv[2];
-//$password = password_hash($str, PASSWORD_DEFAULT);
-$password = password_hash($argv[2], PASSWORD_DEFAULT);
-echo "The username is: " . $username . " and password is: " . $password . "\r\n";
-echo "update webusers set password = '" . $password . "' where username = '" . $username . "';\r\n";
+$password = $argv[2];
+//$hashedpass = password_hash($password, PASSWORD_DEFAULT);
+$hashedpass = password_hash($password, PASSWORD_BCRYPT);
+echo "The username is: " . $username . " and password is: " . $hashedpass . "\r\n";
+echo "\r\n";
+echo "update webusers set password = '" . $hashedpass . "' where username = '" . $username . "';\r\n";
+echo "\r\n";
+
+
+if (password_verify($password, $hashedpass)){
+	echo "Password verified, access granted!\r\n";
+}
+else{
+	echo "Password not verified, access denied!\r\n";
+}
 
 ?>
