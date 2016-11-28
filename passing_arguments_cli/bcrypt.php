@@ -15,7 +15,7 @@ $filename = $argv[0];
 	$username = $argv[1];
 	$password = $argv[2];
     $hashedpass = password_hash($password, PASSWORD_BCRYPT); //The password_hash function returns a string that contains both the hash and the salt.
-    echo "The username is: " . $username . " and password is: " . $hashedpass . "\r\n";
+    echo "The username is: \"" . $username . "\" and password is: \"" . $hashedpass . "\"\r\n";
     echo "\r\n";
     echo "update webusers set password = '" . $hashedpass . "' where username = '" . $username . "';\r\n";
     echo "\r\n";
