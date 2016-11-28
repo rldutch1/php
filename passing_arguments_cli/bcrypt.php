@@ -10,10 +10,10 @@
 //Source: http://php.net/manual/en/function.password-hash.php
 
 $filename = $argv[0];
-$username = $argv[1];
-$password = $argv[2];
 
-    if (!empty($username) && !empty($password)){
+    if (!empty($argv[1]) && !empty($argv[2])){
+	$username = $argv[1];
+	$password = $argv[2];
     $hashedpass = password_hash($password, PASSWORD_BCRYPT); //The password_hash function returns a string that contains both the hash and the salt.
     echo "The username is: " . $username . " and password is: " . $hashedpass . "\r\n";
     echo "\r\n";
@@ -30,6 +30,6 @@ $password = $argv[2];
 		}
 		else {
 			echo "Username and/or password are blank. Please try again.\r\n";
-			echo "Example: php -f bcrypt.php Username Password";
+			echo "Example: php -f bcrypt.php Username Password \r\n";
 		}
 ?>
