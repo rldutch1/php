@@ -12,7 +12,7 @@
 $filename = $argv[0];
 $password = $argv[1];
 $hashedpass = $argv[2]; //Use single quotes if you want to paste the hash here or at the CLI.
-//Example: php -f bcrypt_verify.php Holland '$2y$10$xfxl5pY6CP0TGE6CoKmOlO/aYxFo00eptwG4MZKnvo2DXaNM6bBPi'
+
 
   if (!empty($password) && !empty($hashedpass)){
     	if (password_verify($password, $hashedpass)){
@@ -24,5 +24,6 @@ $hashedpass = $argv[2]; //Use single quotes if you want to paste the hash here o
 	}
 	else {
 		echo "Username and/or password are blank. Please try again.\r\n";
+		echo "Example: php -f bcrypt_verify.php Holland '$2y$10$xfxl5pY6CP0TGE6CoKmOlO/aYxFo00eptwG4MZKnvo2DXaNM6bBPi'";
 	}
 ?>

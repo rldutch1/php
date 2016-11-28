@@ -30,5 +30,6 @@ $password = $argv[2];
 		}
 		else {
 			echo "Username and/or password are blank. Please try again.\r\n";
+			echo "Example: php -f bcrypt.php Username Password";
 		}
 ?>
