@@ -12,8 +12,8 @@
 $filename = $argv[0];
 
     if (!empty($argv[1]) && !empty($argv[2])){
-	$username = $argv[1];
-	$password = $argv[2];
+		$username = $argv[1];
+		$password = $argv[2];
     $hashedpass = password_hash($password, PASSWORD_BCRYPT); //The password_hash function returns a string that contains both the hash and the salt.
     echo "The username is: \"" . $username . "\" and password is: \"" . $hashedpass . "\"\r\n";
     echo "\r\n";
