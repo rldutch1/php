@@ -1,0 +1,2 @@
+This is Microsoft's site on GitHub. https://github.com/Microsoft/msphpsql
+
