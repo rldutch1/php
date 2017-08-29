@@ -1,5 +1,5 @@
-<?php 
-http://www.tizag.com/phpT/examples/formfinale.php
+<?php
+//http://www.tizag.com/phpT/examples/formfinale.php
 $Fname = $_POST["Fname"];
 $Lname = $_POST["Lname"];
 $gender = $_POST["gender"];
@@ -7,18 +7,18 @@ $food = $_POST["food"];
 $quote = $_POST["quote"];
 $education = $_POST["education"];
 $TofD = $_POST["TofD"];
-if (!isset($_POST['submit'])) 
+if (!isset($_POST['submit']))
 { // if page is not submitted to itself echo the form
 ?>
 <html>
 
-<head> 
-<title>Personal INFO</title> 
-</head> 
-<body> 
-<form method="post" action=""> 
-First Name:<input type="text" size="12" maxlength="12" name="Fname"><br /> 
-Last Name:<input type="text" size="12" maxlength="36" name="Lname"><br /> 
+<head>
+<title>Personal INFO</title>
+</head>
+<body>
+<form method="post" action="">
+First Name:<input type="text" size="12" maxlength="12" name="Fname"><br />
+Last Name:<input type="text" size="12" maxlength="36" name="Lname"><br />
 Gender:<br />
 Male:<input type="radio" value="Male" name="gender"><br />
 Female:<input type="radio" value="Female" name="gender"><br />
@@ -41,7 +41,7 @@ Select your favorite time of day:<br />
 </form>
 
 <?php
-} else { 
+} else {
 echo "Hello, ".$Fname." ".$Lname.".<br />";
 echo "You are ".$gender.", and you like ";
 foreach ($food as $f) {
