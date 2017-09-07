@@ -1,4 +1,6 @@
-<?php //I Google searched for: "How to use Wordpress wp-blog-header for authentication". ?>
+<?php //I Google searched for: "How to use Wordpress wp-blog-header for authentication".
+//There is a WP-API/Basic-Auth plugin that I have seen but I don't know much about it. 
+?>
 
 <?php
 /*
