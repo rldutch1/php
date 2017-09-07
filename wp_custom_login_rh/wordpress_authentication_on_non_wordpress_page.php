@@ -1,3 +1,5 @@
+<?php //I Google searched for: "How to use Wordpress wp-blog-header for authentication". ?>
+
 <?php
 /*
 Q: https://wordpress.stackexchange.com/questions/26457/how-to-use-wordpress-authentication-on-non-wordpress-page
