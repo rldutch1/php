@@ -1,4 +1,5 @@
 I had a hard time getting PHP to work in the user home directories until I disabled the bottom part of php7.0.conf. 
+The file is located here: /etc/apache2/mods-enabled/
 
 Here is the link to a user submitted answer (it wasn't the accepted answer).
 https://askubuntu.com/questions/760787/php-rendered-as-text-after-ubuntu-16-04-upgrade
