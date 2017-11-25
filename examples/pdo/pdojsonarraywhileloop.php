@@ -30,6 +30,7 @@ echo "<pre>" . print_r($results) . "</pre>";
 $statement1 = $handler->prepare("select newname, description from vw_jquery_videos order by newname;");
 $statement1->execute(); //Run the prepared query. Prevents MySQL injection.
 
+//You can build an array with the while or for loop but it is easier to use fetchAll.
 			while($r = $statement1->fetch(PDO::FETCH_BOTH)){
 				echo $r[0], $r[1];
 			}
