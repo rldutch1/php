@@ -21,7 +21,7 @@ catch(PDOException $e) { //Return the PDO exception "$e".
 $statement = $handler->prepare("select newname, description from vw_jquery_videos order by newname;");
 $statement->execute(); //Run the prepared query. Prevents MySQL injection.
 $results=$statement->fetchAll(PDO::FETCH_NUM); //fetchAll creates an array of the data.
-$json=json_encode($results);
+$json=json_encode($results); //Encoding results to JSON.
 echo $json . "<br />\r\n";
 echo "------------<br />\r\n";
 echo "<pre>" . print_r($results) . "</pre>";
@@ -30,8 +30,8 @@ echo "<pre>" . print_r($results) . "</pre>";
 $statement1 = $handler->prepare("select newname, description from vw_jquery_videos order by newname;");
 $statement1->execute(); //Run the prepared query. Prevents MySQL injection.
 
-//You can build an array with the while or for loop but it is easier to use fetchAll.
-			while($r = $statement1->fetch(PDO::FETCH_BOTH)){
-				echo $r[0], $r[1];
-			}
+//You can build an array with the while or for loop but it is easier to use fetchAll above.
+	while($r = $statement1->fetch(PDO::FETCH_BOTH)){
+		echo $r[0], $r[1];
+	}
 ?>
