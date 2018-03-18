@@ -1,0 +1,10 @@
+-- Create user database.
+-- CREATE DATABASE stibbard;
+-- Create local user.
+CREATE USER 'stibbard'@'localhost' IDENTIFIED BY 'stibbard';
+GRANT ALL PRIVILEGES ON stibbard.* TO 'stibbard'@'localhost' WITH GRANT OPTION;
+-- Create remote user.
+CREATE USER 'stibbard'@'%' IDENTIFIED BY 'stibbard';
+GRANT ALL PRIVILEGES ON stibbard.* TO 'stibbard'@'%' WITH GRANT OPTION;
+-- Tell the server to reload the GRANT TABLES.
+FLUSH PRIVILEGES;

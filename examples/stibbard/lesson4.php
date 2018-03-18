@@ -1,7 +1,7 @@
 <?php
 if(!session_id()) session_start(); //If session has not been started, start it.
 echo "
-<form method='post' action='x.php'>
+<form method='post' action='redirect.php'>
   <select name='stibbard'>
   <option value='1'>See Lesson 1</option><br />
   <option value='2'>See Lesson 2</option><br />
@@ -13,7 +13,7 @@ echo "
   <option value='8'>See Lesson 8</option><br />
 </select>
 <input type='submit' value='Choose' />
-<a href='index.php'>Home</a><br />
+<!-- <a href='redirect.php'>Home</a><br /> -->
 </form>
 <br /><hr /><br />
 <a href='https://www.youtube.com/watch?v=izeoWWYOnoY'>MySQL PDO Tutorial Lesson 4 - Fetch method</a>
