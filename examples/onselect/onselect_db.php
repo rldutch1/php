@@ -27,7 +27,7 @@ $q = intval($_GET['q']);
 //    die('Could not connect: ' . mysqli_error($con));
 //}
 
-$sql="SELECT * FROM onselect WHERE id = '".$q."'";
+$sql="select firstname, lastname, birthdate, truncate(abs((DATEDIFF(birthdate, now())/365.25)),0) as age, hometown, job from onselect where id = '".$q."'";
 $result = mysqli_query($con,$sql);
 if (!$result) {
     printf("Error: %s\n", mysqli_error($con));
@@ -37,6 +37,7 @@ echo "<table>
 <tr>
 <th>Firstname</th>
 <th>Lastname</th>
+<th>Birthdate</th>
 <th>Age</th>
 <th>Hometown</th>
 <th>Job</th>
@@ -45,6 +46,7 @@ while($row = mysqli_fetch_array($result)) {
     echo "<tr>";
     echo "<td>" . $row['firstname'] . "</td>";
     echo "<td>" . $row['lastname'] . "</td>";
+    echo "<td>" . $row['birthdate'] . "</td>";
     echo "<td>" . $row['age'] . "</td>";
     echo "<td>" . $row['hometown'] . "</td>";
     echo "<td>" . $row['job'] . "</td>";
@@ -55,4 +57,3 @@ mysqli_close($con);
 ?>
 </body>
 </html>
-

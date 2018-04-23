@@ -2,10 +2,11 @@
 <!DOCTYPE html>
 <html>
 <head>
+<title>MySQL PDO</title>
 <script>
 function showUser(str) {
     if (str == "") {
-        document.getElementById("txtHint").innerHTML = "";
+        document.getElementById("txtHint").innerHTML = "<b class='wrongselection'>Please select a person from the list or <a href='onselectadd_pdo.php' class='wrongselection'>add more names.</a></b>";
         return;
     } else {
         if (window.XMLHttpRequest) {
@@ -20,28 +21,31 @@ function showUser(str) {
                 document.getElementById("txtHint").innerHTML = this.responseText;
             }
         };
-        xmlhttp.open("GET","onselect_db.php?q="+str,true);
+        xmlhttp.open("POST","onselect_db_pdo.php?q="+str,true);
         xmlhttp.send();
     }
 }
 </script>
+<style>
+.wrongselection {color: red;}
+</style>
 </head>
 <body>
 <div><h2>Display information from a database table when selection list option is selected.</h2></div>
 
 <?php
-//********************************************************************
-$statement = $handler->prepare("select * from onselect order by id;");
+//*******************Drop-down selection Begin************************
+$statement = $handler->prepare("select id, firstname, lastname from onselect order by lastname, firstname;");
 $statement->execute(); //Run the prepared query. Prevents MySQL injection.
 
 $RowCount = $statement->rowCount(); //Count the number of rows returned.
 echo "<form><select name='users' onchange='showUser(this.value)'>
   <option value=''>Select a person:</option>";
 			while($r = $statement->fetch(PDO::FETCH_OBJ)){
-    echo "<option value='" . $r->id . "'>" . $r->firstname . " " . $r->lastname . "</option>";
+    echo "<option value='" . $r->id . "'>" . $r->lastname . " " . $r->firstname . "</option>";
 			}
 		echo "  </select></form>";
-//********************************************************************
+//*******************Drop-down selection End**************************
 ?>
 
 <br>
@@ -49,4 +53,3 @@ echo "<form><select name='users' onchange='showUser(this.value)'>
 
 </body>
 </html>
-

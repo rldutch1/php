@@ -2,10 +2,11 @@
 <!DOCTYPE html>
 <html>
 <head>
+<title>MySQLi</title>
 <script>
 function showUser(str) {
     if (str == "") {
-        document.getElementById("txtHint").innerHTML = "";
+        document.getElementById("txtHint").innerHTML = "<b class='wrongselection'>Please select a person from the list or <a href='onselectadd.php' class='wrongselection'>add more names.</a></b>";
         return;
     } else {
         if (window.XMLHttpRequest) {
@@ -20,16 +21,19 @@ function showUser(str) {
                 document.getElementById("txtHint").innerHTML = this.responseText;
             }
         };
-        xmlhttp.open("GET","onselect_db.php?q="+str,true);
+        xmlhttp.open("POST","onselect_db.php?q="+str,true);
         xmlhttp.send();
     }
 }
 </script>
+<style>
+.wrongselection {color: red;}
+</style>
 </head>
 <body>
 <div><h2>Display information from a database table when selection list option is selected.</h2></div>
 <?php
-$sql="SELECT * FROM onselect order by id;";
+$sql="SELECT id, firstname, lastname FROM onselect order by lastname, firstname;";
 $result = mysqli_query($con,$sql);
 if (!$result) {
     printf("Error: %s\n", mysqli_error($con));

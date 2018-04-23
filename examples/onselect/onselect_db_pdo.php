@@ -25,7 +25,8 @@ $q = intval($_GET['q']);
 //***************************************************************************
 
 //$statement = $handler->prepare("select * from thetablename order by id;");
-$statement = $handler->prepare("select * from onselect WHERE id = '".$q."'");
+//$statement = $handler->prepare("select * from onselect WHERE id = '".$q."'");
+$statement = $handler->prepare("select firstname, lastname, birthdate, truncate(abs((DATEDIFF(birthdate, now())/365.25)),0) as age, hometown, job from onselect where id = '".$q."'");
 $statement->execute(); //Run the prepared query. Prevents MySQL injection.
 
 $RowCount = $statement->rowCount(); //Count the number of rows returned.
@@ -35,6 +36,7 @@ echo "
 			<tr>
 			<th>Firstname</th>
 			<th>Lastname</th>
+			<th>birthdate</th>
 			<th>Age</th>
 			<th>Hometown</th>
 			<th>Job</th>
@@ -43,7 +45,8 @@ echo "
 	    echo "<tr>";
   	  echo "<td>" . $r->firstname . "</td>";
     	echo "<td>" . $r->lastname . "</td>";
-    	echo "<td>" . $r->age . "</td>";
+    	echo "<td>" . $r->birthdate . "</td>";
+      echo "<td>" . $r->age . "</td>";
     	echo "<td>" . $r->hometown . "</td>";
     	echo "<td>" . $r->job . "</td>";
     	echo "</tr>";
@@ -54,4 +57,3 @@ echo "</table>";
 ?>
 </body>
 </html>
-
