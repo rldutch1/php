@@ -24,9 +24,13 @@ $q = intval($_GET['q']);
 
 //***************************************************************************
 
-//$statement = $handler->prepare("select * from thetablename order by id;");
-//$statement = $handler->prepare("select * from onselect WHERE id = '".$q."'");
-$statement = $handler->prepare("select firstname, lastname, birthdate, truncate(abs((DATEDIFF(birthdate, now())/365.25)),0) as age, hometown, job from onselect where id = '".$q."'");
+$statement = $handler->prepare("select  firstname, lastname, birthdate, (CASE
+	when TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) >= 1 then concat(TIMESTAMPDIFF(YEAR, birthdate, CURDATE()), ' year(s)')
+	when TIMESTAMPDIFF(MONTH, birthdate, CURDATE()) >= 1 then concat(TIMESTAMPDIFF(MONTH, birthdate, CURDATE()), ' month(s)')
+	when TIMESTAMPDIFF(DAY, birthdate, CURDATE()) >= 1 then concat(TIMESTAMPDIFF(DAY, birthdate, CURDATE()), ' day(s)')
+	else concat('0 day(s)')
+	END
+) as age, hometown, job from onselect where id = '".$q."'");
 $statement->execute(); //Run the prepared query. Prevents MySQL injection.
 
 $RowCount = $statement->rowCount(); //Count the number of rows returned.
