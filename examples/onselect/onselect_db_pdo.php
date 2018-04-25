@@ -28,7 +28,7 @@ $statement = $handler->prepare("select  firstname, lastname, birthdate, (CASE
 	when TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) >= 1 then concat(TIMESTAMPDIFF(YEAR, birthdate, CURDATE()), ' year(s)')
 	when TIMESTAMPDIFF(MONTH, birthdate, CURDATE()) >= 1 then concat(TIMESTAMPDIFF(MONTH, birthdate, CURDATE()), ' month(s)')
 	when TIMESTAMPDIFF(DAY, birthdate, CURDATE()) >= 1 then concat(TIMESTAMPDIFF(DAY, birthdate, CURDATE()), ' day(s)')
-	else concat('0 day(s)')
+	else concat('Less than a day old')
 	END
 ) as age, hometown, job from onselect where id = '".$q."'");
 $statement->execute(); //Run the prepared query. Prevents MySQL injection.
