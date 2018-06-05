@@ -28,7 +28,7 @@ a:active {text-decoration: underline;}
 .grey {background-color:#a0a0a0;}
 </style>
 <body>
-<form method='post' action='x.php'>
+<form method='post' action='redirect.php'>
   <select name='stibbard'>
   <option value='1'>See Lesson 1</option><br />
   <option value='2'>See Lesson 2</option><br />

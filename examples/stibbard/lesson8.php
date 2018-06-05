@@ -21,6 +21,7 @@ function generateRandomString(\$length = 5) {<br />
 \$insert->bindValue(2,'Holland');<br />
 \$insert->bindValue(3,'12345');<br />
 \$insert->execute();<br />
+\$id = \$handler->lastInsertId();<br />
 ";
 
 function generateRandomString($length = 5) {
@@ -39,7 +40,9 @@ $insert->bindValue(1,$randomname);
 $insert->bindValue(2,'Holland');
 $insert->bindValue(3,'12345');
 $insert->execute();
+$id = $handler->lastInsertId();
 
+echo "Echoing the lastInsertId here just to show it works: " . $id;
 echo "<div class='section1'>Insert statement with parameters.</div><br />";
 echo "<div class='grey'>No data output from this query. See table generated in lesson 3 for results.";
 echo "</div>";

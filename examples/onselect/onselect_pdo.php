@@ -1,12 +1,12 @@
-<?php include('onselect_connect.php'); ?>
+<?php include('onselect_connect_pdo.php'); ?>
 <!DOCTYPE html>
 <html>
 <head>
-<title>MySQLi</title>
+<title>MySQL PDO</title>
 <script>
 function showUser(str) {
     if (str == "") {
-        document.getElementById("txtHint").innerHTML = "<b class='wrongselection'>Please select a person from the list or <a href='onselectadd.php' class='wrongselection'>add more names.</a></b>";
+        document.getElementById("txtHint").innerHTML = "<b class='wrongselection'>Please select a person from the list or <a href='onselectadd_pdo.php' class='wrongselection'>add more names.</a></b>";
         return;
     } else {
         if (window.XMLHttpRequest) {
@@ -21,7 +21,7 @@ function showUser(str) {
                 document.getElementById("txtHint").innerHTML = this.responseText;
             }
         };
-        xmlhttp.open("POST","onselect_db.php?q="+str,true);
+        xmlhttp.open("POST","onselect_db_pdo.php?q="+str,true);
         xmlhttp.send();
     }
 }
@@ -32,24 +32,24 @@ function showUser(str) {
 </head>
 <body>
 <div><h2>Display information from a database table when selection list option is selected.</h2></div>
+
 <?php
-$sql="SELECT id, firstname, lastname FROM onselect order by lastname, firstname;";
-$result = mysqli_query($con,$sql);
-if (!$result) {
-    printf("Error: %s\n", mysqli_error($con));
-    exit();
-}
+//*******************Drop-down selection Begin************************
+$statement = $handler->prepare("select id, firstname, lastname from onselect order by lastname, firstname;");
+$statement->execute(); //Run the prepared query. Prevents MySQL injection.
+
+$RowCount = $statement->rowCount(); //Count the number of rows returned.
 echo "<form><select name='users' onchange='showUser(this.value)'>
   <option value=''>Select a person:</option>";
-while($row = mysqli_fetch_array($result)) {
-    echo "<option value='" . $row['id'] . "'>" . $row['firstname'] . " " . $row['lastname'] . "</option>";
-}
-echo "  </select></form>";
-mysqli_close($con);
+			while($r = $statement->fetch(PDO::FETCH_OBJ)){
+    echo "<option value='" . $r->id . "'>" . $r->lastname . " " . $r->firstname . "</option>";
+			}
+		echo "  </select></form>";
+//*******************Drop-down selection End**************************
 ?>
+
 <br>
 <div id="txtHint"><b>Person info will be listed here...</b></div>
 
 </body>
 </html>
-

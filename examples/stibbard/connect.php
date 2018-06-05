@@ -3,7 +3,7 @@ if(!session_id()) session_start(); //If session has not been started, start it.
 //PDO Connect method: MySQL PDO Tutorial Lesson 1 - Connection
 //PDO Try/Catch method: MySQL PDO Tutorial Lesson 2 - Error catching
 try {
-	$handler = new PDO('mysql:host=localhost;dbname=dbasename;', 'dbaseuser', 'dbasepassword'); //Setting the handler. See next line if this line fails.
+	$handler = new PDO('mysql:host=localhost;dbname=stibbard;', 'stibbard', 'stibbard'); //Setting the handler. See next line if this line fails.
 	$handler->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); //Setting the attributes for the handler that we want to see if exception error.
 }
 //global $handler

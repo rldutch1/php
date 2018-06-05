@@ -5,6 +5,9 @@ include('header.php');
 echo "The database connection string has been combined with lesson 2. ";
 echo "Below is the MySQL and MSSQL query to create the \"stibbard\" table.<br />
 <br /><div class='section1'>MySQL Query</div><br />
+DROP DATABASE IF EXISTS stibbard;<br />
+CREATE DATABASE stibbard;<br />
+USE stibbard;<br />
 CREATE TABLE stibbard (<br />
   id int(11) unsigned NOT NULL AUTO_INCREMENT,<br />
   firstname varchar(100) NOT NULL,<br />
@@ -13,7 +16,19 @@ CREATE TABLE stibbard (<br />
   PRIMARY KEY (id),<br />
   KEY id (id)<br />
 ) ENGINE=InnoDB;<br />
+<br /><div class='section1'>MySQL Query to create stibbard user and grant access to stibbard database.</div><br />
+-- Make sure the database has been created first.<br />
+-- Create local user.<br />
+CREATE USER 'stibbard'@'localhost' IDENTIFIED BY 'stibbard';<br />
+GRANT ALL PRIVILEGES ON stibbard.* TO 'stibbard'@'localhost' WITH GRANT OPTION;<br />
+-- Create remote user.<br />
+CREATE USER 'stibbard'@'%' IDENTIFIED BY 'stibbard';<br />
+GRANT ALL PRIVILEGES ON stibbard.* TO 'stibbard'@'%' WITH GRANT OPTION;<br />
+-- Tell the server to reload the GRANT TABLES.<br />
+FLUSH PRIVILEGES;<br />
 <br /><div class='section1'>Microsoft SQL Query</div><br />
+CREATE DATABASE stibbard;<br />
+USE stibbard;<br />
 CREATE TABLE stibbard (<br />
   id int identity(1,1) primary key,<br />
   firstname varchar(100) NOT NULL,<br />
