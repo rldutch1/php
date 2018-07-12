@@ -2,14 +2,15 @@
 /*
 Source: http://forums.codeguru.com/showthread.php?464634-HTML-Keypad
 Purpose: Teach user how to activate and deactivate the alarm.
-Filename: button_control_panel1.php
+Filename: alarm_keypad_tutorial.php
 Note 1: Display 45 second countdown.
 Note 2: Check the last number to validate "Off", "Away", "Stay".
 */
 ?>
 
 <html>
-
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3mobile.css">
 <body onload="emptyCode();">
 
 	<?php $code = rand(1000,9999);
@@ -129,7 +130,7 @@ body {
 }
 </style>
 
-<form action="button_control_panel1.php" method="post">
+<form action="alarm_keypad_tutorial.php" method="post">
 <input type="text" name="code" value="" maxlength="4" class="display" readonly="readonly" />
 <table id="keypad" cellpadding="5" cellspacing="3">
 	<tr>
@@ -143,7 +144,7 @@ body {
         <td onclick="addCode('6');">6<br />Bypass</td>
     </tr>
     <tr>
-    	<td onclick="addCode('7');">7<br />Chime</td>
+    	<td onclick="addCode('7');">7<br />Instant</td>
         <td onclick="addCode('8');">8<br />Code</td>
         <td onclick="addCode('9');">9<br />Chime</td>
     </tr>
