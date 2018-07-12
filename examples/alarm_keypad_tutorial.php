@@ -13,34 +13,42 @@ Note 2: Check the last number to validate "Off", "Away", "Stay".
 <body onload="emptyCode();">
 
 	<?php $code = rand(1000,9999);
-	$task1 = "You are leaving the house.";
-	$task2 = "You are staying home.";
-	$task3 = "The alarm is beeping!";
+	$task1 = "The alarm is beeping!";
+	$task2 = "You are leaving the house.";
+	$task3 = "You are staying home.";
 
 	$task_num = rand(1,3);
 	if($task_num == 1) {
 		echo $task1;
-		$task_num = '';
+		$fullcode = $code . $task_num;
+		//$task_num = '';
 	}
 	else if ($task_num == 2) {
 		echo $task2;
-		$task_num = '';
+		$fullcode = $code . $task_num;
+		//$task_num = '';
 	}
 	else {
 		echo $task3;
-		$task_num = '';
+		$fullcode = $code . $task_num;
+		//$task_num = '';
 	}
 	?>
 
 	Your code is: <?php echo $code; ?>
 <script type="text/javascript">
 function addCode(key){
+	var display_task = <?php echo $task_num . ";";?> //Dynamically setting the display task.
 	var code = document.forms[0].code;
-	if(code.value.length < 4){
+	if(code.value.length < 5){
 		code.value = code.value + key;
 	}
-	if(code.value.length == 4 && code.value == '<?php echo $code; ?>'){//Need to do the "Off", "Away", "Stay" validation here.
-		document.getElementById("task").style.display = "block";//getElementById("task1"), ("task2"), ("task3").
+	if(code.value.length == 5 && code.value == '<?php echo $fullcode; ?>'){//Need to do the "Off", "Away", "Stay" validation here.
+		document.getElementById("task<?php echo $task_num;?>").style.display = "block";//getElementById("task1"), ("task2"), ("task3").
+		setTimeout(submitForm,2000);
+	}
+	else if (code.value.length == 5 && code.value != '<?php echo $fullcode; ?>') {
+		document.getElementById("task4").style.display = "block";//getElementById("task1"), ("task2"), ("task3").
 		setTimeout(submitForm,2000);
 	}
 }
@@ -60,7 +68,6 @@ body {
 	font-family:Verdana, Arial, Helvetica, sans-serif;
 	font-size: 20px;
 	color:yellow;
-	border:2px blue;
 }
 #keypad {margin:auto; margin-top:20px;}
 
@@ -88,7 +95,35 @@ body {
 #task {
 	text-align:center;
 	color:#009900;
-	font-size:14px;
+	font-size:24px;
+	font-weight:bold;
+	display:none;
+}
+#task1 {
+	text-align:center;
+	color:#009900;
+	font-size:24px;
+	font-weight:bold;
+	display:none;
+}
+#task2 {
+	text-align:center;
+	color:#009900;
+	font-size:24px;
+	font-weight:bold;
+	display:none;
+}
+#task3 {
+	text-align:center;
+	color:#009900;
+	font-size:24px;
+	font-weight:bold;
+	display:none;
+}
+#task4 {
+	text-align:center;
+	color:#FF0000;
+	font-size:24px;
 	font-weight:bold;
 	display:none;
 }
@@ -118,10 +153,12 @@ body {
         <td onclick="addCode('#');">#</td>
     </tr>
 </table>
-<p id="task">You have 45 seconds to leave!</p>
-<p id="task1">You have 45 seconds to leave!</p>
-<p id="task2">You have 45 seconds to stay in or out!</p>
-<p id="task3">You have 45 seconds to disable the alarm!</p>
+<p id="task">You have 45 seconds to </p>
+<p id="task1">You have 45 seconds to disable the alarm!</p>
+<p id="task2">You have 45 seconds to leave!</p>
+<p id="task3">You have 45 seconds to stay in or leave!</p>
+<p id="task4">Try Again!</p>
 </form>
+<p>Note: The actual alarm keypad will not display your code.</p>
 </body>
 </html>
