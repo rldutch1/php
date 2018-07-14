@@ -28,7 +28,7 @@ Note 2: Check the last number to validate "Off", "Away", "Stay".
 	$task3 = "Task: You are staying home. Enable the alarm.";
 
 	$siren = '';
-	$task_num = rand(1,3);
+	$task_num = mt_rand(1,3);
 	if($task_num == 1) {
 		echo $task1;
 		$fullcode = $code . $task_num;
