@@ -3,9 +3,9 @@
 $strings = array('AbCd1zyZ9', 'foo!#$bar');
 foreach ($strings as $testcase) {
     if (ctype_alnum($testcase)) {
-        echo "The string $testcase consists of all letters or digits.\n";
+        echo "The string $testcase consists of all letters or digits.\n<br />";
     } else {
-        echo "The string $testcase does not consist of all letters or digits.\n";
+        echo "The string $testcase does not consist of all letters or digits.\n<br />";
     }
 }
 ?>
@@ -14,9 +14,9 @@ foreach ($strings as $testcase) {
 //Check a variable for alphabets and digits.
 $testcase = '-123';
     if (ctype_alnum($testcase)) {
-        echo "The string $testcase consists of all letters or digits.\n";
+        echo "The string $testcase consists of all letters or digits.\n<br />";
     } else {
-        echo "The string $testcase does not consist of all letters or digits.\n";
+        echo "The string $testcase does not consist of all letters or digits.\n<br />";
     }
 
 ?>
@@ -25,9 +25,9 @@ $testcase = '-123';
 //Check a variable for alphabets.
 $testcase = 'ABC';
     if (ctype_alpha($testcase)) {
-        echo "The string $testcase consists of all letters.\n";
+        echo "The string $testcase consists of all letters.\n<br />";
     } else {
-        echo "The string $testcase does not consist of all letters.\n";
+        echo "The string $testcase does not consist of all letters.\n<br />";
     }
 
 ?>
@@ -36,9 +36,9 @@ $testcase = 'ABC';
 //Check a variable for numbers.
 $testcase = '123';
     if (ctype_digit($testcase)) {
-        echo "The string $testcase consists of all digits.\n";
+        echo "The string $testcase consists of all digits.\n<br />";
     } else {
-        echo "The string $testcase does not consist of all digits.\n";
+        echo "The string $testcase does not consist of all digits.\n<br />";
     }
 
 ?>

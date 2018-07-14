@@ -12,34 +12,42 @@ Note 2: Check the last number to validate "Off", "Away", "Stay".
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3mobile.css">
 <body onload="emptyCode();">
+<center>
+	<H3>
+	Alarm Keypad Practice
+		<h5>
+		Please enter the correct key sequence to satisfy the task. The task will randomly change.
+		</h5>
+	</H3>
+	<br />
+</center>
+	<?php
+	$code = rand(1000,9999);
+	$task1 = "Task: The alarm is beeping, disable it.";
+	$task2 = "Task: You are leaving the house. Enable the alarm.";
+	$task3 = "Task: You are staying home. Enable the alarm.";
 
-	<?php $code = rand(1000,9999);
-	$task1 = "The alarm is beeping!";
-	$task2 = "You are leaving the house.";
-	$task3 = "You are staying home.";
-
+	$siren = '';
 	$task_num = rand(1,3);
 	if($task_num == 1) {
 		echo $task1;
 		$fullcode = $code . $task_num;
-		//$task_num = '';
+		$siren = $task_num;
 	}
 	else if ($task_num == 2) {
 		echo $task2;
 		$fullcode = $code . $task_num;
-		//$task_num = '';
 	}
 	else {
 		echo $task3;
 		$fullcode = $code . $task_num;
-		//$task_num = '';
 	}
 	?>
 
 	Your code is: <?php echo $code; ?>
 <script type="text/javascript">
 function addCode(key){
-	var display_task = <?php echo $task_num . ";";?> //Dynamically setting the display task.
+	var siren = <?php echo $task_num . ";";?> //Dynamically setting the display task.
 	var code = document.forms[0].code;
 	if(code.value.length < 5){
 		code.value = code.value + key;
@@ -48,14 +56,18 @@ function addCode(key){
 		document.getElementById("task<?php echo $task_num;?>").style.display = "block";//getElementById("task1"), ("task2"), ("task3").
 		setTimeout(submitForm,2000);
 	}
+	else if (siren == 1 && code.value.length == 5 && code.value != '<?php echo $fullcode; ?>') {
+		document.getElementById("task5").style.display = "block";//getElementById("task1"), ("task2"), ("task3").
+		setTimeout(submitForm,3000);
+	}
 	else if (code.value.length == 5 && code.value != '<?php echo $fullcode; ?>') {
 		document.getElementById("task4").style.display = "block";//getElementById("task1"), ("task2"), ("task3").
-		setTimeout(submitForm,2000);
+		setTimeout(submitForm,3000);
 	}
 }
 
 function submitForm(){
-	document.forms[0].submit();
+	document.forms[0].submit(); //The first form in the document.
 }
 
 function emptyCode(){
@@ -128,6 +140,13 @@ body {
 	font-weight:bold;
 	display:none;
 }
+#task5 {
+	text-align:center;
+	color:#FF0000;
+	font-size:24px;
+	font-weight:bold;
+	display:none;
+}
 </style>
 
 <form action="alarm_keypad_tutorial.php" method="post">
@@ -155,10 +174,11 @@ body {
     </tr>
 </table>
 <p id="task">You have 45 seconds to </p>
-<p id="task1">You have 45 seconds to disable the alarm!</p>
-<p id="task2">You have 45 seconds to leave!</p>
-<p id="task3">You have 45 seconds to stay in or leave!</p>
+<p id="task1">Good job! You have 45 seconds to disable the alarm when it is beeping!</p>
+<p id="task2">Good Job! You have 45 seconds to leave the house when the alarm starts beeping!</p>
+<p id="task3">Good Job! The alarm will not beep. You have 45 seconds to stay in or leave!</p>
 <p id="task4">Try Again!</p>
+<p id="task5">You failed to turn off the alarm within 45 seconds!<br /><img src='./siren_gifs/police_blue_siren.gif'></p>
 </form>
 <p>Note: The actual alarm keypad will not display your code.</p>
 </body>
