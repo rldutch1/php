@@ -1,5 +1,5 @@
 <?php
-count_chars($string,3) //This Function will count how many diferent characters are in string
+count_chars($string,3) //This Function will count how many different characters are in string
 crc32($string) //CRC32 Hash Calculation
 crypt($string) //One Way Hash Calculation
 echo($string) //prints PHP String on page
@@ -16,4 +16,4 @@ strtoupper($string) //will convert string to UPERCASE letters
 str_repeat($string, 2) //Will Repeat a string (2 times in this case)
 str_rot13($string) //Perform the rot13 transform on a string
 str_shuffle($string) //Will randomly mix/shufle characters from string
-ucfirst($string) //will return this string but with first character UPERCASE
+ucfirst($string) //will return this string but with first character UPPERCASE

@@ -12,8 +12,9 @@ GRANT ALL PRIVILEGES ON app.* TO 'app_user'@'%' WITH GRANT OPTION;
 FLUSH PRIVILEGES;
 
 insert into guestbook (name, message, posted) values
-('Mindy','This is a message from Mindy.','1993-05-22 00:00:00'),
-('Pippa','This is a message from Pippa.','1995-05-13 00:00:00'),
-('Monica','This is a message from Monica.','1995-10-14 00:00:00'),
-('Jeanette','This is a message from Monica.','1999-02-13 00:00:00');
+('Name1','This is a message from Name1.','1993-05-23 00:00:00'),
+('Name2','This is a message from Name2.','1995-05-13 00:00:00'),
+('Name3','This is a message from Name3.','1995-10-14 00:00:00'),
+('Name4','This is a message from Name4.','1999-02-13 00:00:00'),
+('Name5','This is a message from Name5.','1999-02-13 00:00:00');
 
