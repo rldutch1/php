@@ -1,10 +1,10 @@
 <?php
 #Source: http://www.if-not-true-then-false.com/2010/php-calculate-real-differences-between-two-dates-or-timestamps/
+echo 'TimeDifferences.php file. Original name was dateDiff.php<br />';
 
- 
   // Set timezone
   date_default_timezone_set("UTC");
- 
+
   // Time format is UNIX timestamp or
   // PHP strtotime compatible strings
   function dateDiff($time1, $time2, $precision = 6) {
@@ -15,7 +15,7 @@
     if (!is_int($time2)) {
       $time2 = strtotime($time2);
     }
- 
+
     // If time1 is bigger than time2
     // Then swap time1 and time2
     if ($time1 > $time2) {
@@ -23,11 +23,11 @@
       $time1 = $time2;
       $time2 = $ttime;
     }
- 
+
     // Set up intervals and diffs arrays
     $intervals = array('year','month','day','hour','minute','second');
     $diffs = array();
- 
+
     // Loop thru all intervals
     foreach ($intervals as $interval) {
       // Create temp time from time1 and interval
@@ -42,11 +42,11 @@
         $ttime = strtotime("+" . $add . " " . $interval, $time1);
         $looped++;
       }
- 
+
       $time1 = strtotime("+" . $looped . " " . $interval, $time1);
       $diffs[$interval] = $looped;
     }
- 
+
     $count = 0;
     $times = array();
     // Loop thru all diffs
@@ -55,7 +55,7 @@
       if ($count >= $precision) {
 	break;
       }
-      // Add value and interval 
+      // Add value and interval
       // if value is bigger than 0
       if ($value > 0) {
 	// Add s if value is not 1
@@ -67,11 +67,11 @@
 	$count++;
       }
     }
- 
+
     // Return string with times
     return implode(", ", $times);
   }
- 
+
 
 /*
 dateDiff function example usage
@@ -115,4 +115,16 @@ Output:
 1264514564
 1264514564
 */
+
+echo "Robert Holland is: " . dateDiff("now", "1968-07-08 10:07:00") . ".<br />";
+echo "Jeanette Holland is: " . dateDiff("now", "1968-12-27 00:00:00") . ".<br />";
+echo "Leah Holland is: " . dateDiff("now", "2004-12-03 16:29:00") . ".<br />";
+echo "Jason Holland is: " . dateDiff("now", "2008-04-03 16:09:00") . ".<br />";
+echo "Keira Holland is: " . dateDiff("now", "2008-12-01 01:24:00") . ".<br />";
+echo "Aiko Holland is: " . dateDiff("now", "2015-03-01 00:00:00") . ".<br />";
+echo "Stanley Holland is: " . dateDiff("now", "1968-07-08 10:05:00") . ".<br />";
+echo "Vernon C. Holland III is: " . dateDiff("now", "1964-09-09 00:00:00") . ".<br />";
+echo "Robert D. Spriggs is: " . dateDiff("now", "1915-11-27 00:00:00") . ".<br />";
+echo "Patricia and Priscilla Spriggs are: " . dateDiff("now", "1942-01-02 00:00:00") . ".<br />";
+echo "Robin Spriggs is: " . dateDiff("now", "1955-01-01 00:00:00") . ".<br />";
 ?>
