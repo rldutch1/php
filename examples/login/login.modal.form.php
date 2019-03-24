@@ -139,7 +139,7 @@ span.psw {
   <form class="modal-content animate" action="login.modal.form.action_page.php" method="POST">
     <div class="imgcontainer">
       <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
-      <img src="img_avatar2.png" alt="Avatar" class="avatar">
+      <img src="20190927bloodmoon.jpg" alt="Avatar" class="avatar">
     </div>
 
     <div class="container">
