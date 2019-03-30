@@ -50,6 +50,6 @@ echo "<form><select name='users' onchange='showUser(this.value)'>
 
 <br>
 <div id="txtHint"><b>Person info will be listed here...</b></div>
-
+<br /><br /><a href='onselectadd_pdo.php'>Add another person.</a>
 </body>
 </html>
