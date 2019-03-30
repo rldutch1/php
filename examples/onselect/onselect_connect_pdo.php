@@ -1,6 +1,6 @@
 <?php
 //Program Author: Robert Holland
-//Program Name: onselect_connect1.php
+//Program Name: onselect_connect.php
 //Creation Date: Sunday, March 18, 2018 5:10:28 PM
 //Last Modified:
 //Purpose:
@@ -8,7 +8,7 @@
 //----------------------------------------------------------------------------
 //PDO connect
 try {
-	$handler = new PDO('mysql:host=localhost; dbname=deleteme', 'testing', 'Testing1!');
+	$handler = new PDO('mysql:host=localhost; dbname=testing', 'robdba5', 'robdba5P!');
 	$handler->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 }
 catch(PDOException $e) { //Return the PDO exception "$e".
