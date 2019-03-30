@@ -49,6 +49,7 @@ mysqli_close($con);
 ?>
 <br>
 <div id="txtHint"><b>Person info will be listed here...</b></div>
+<br /><br /><a href='onselectadd.php'>Add another person.</a>
 
 </body>
 </html>

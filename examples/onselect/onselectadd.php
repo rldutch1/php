@@ -24,26 +24,26 @@
 				<li id="li_1" >
 				<label class="description" for="element_1">Name </label>
 				<span>
-				  <input id="element_1_1" name= "element_1_1" class="element text" maxlength="255" size="20" value=""/>
+				  <input id="element_1_1" name= "element_1_1" class="element text" maxlength="255" size="20" value="" required />
 				  <label>First</label>
 				</span>
 				<span>
-				  <input id="element_1_2" name= "element_1_2" class="element text" maxlength="255" size="20" value=""/>
+				  <input id="element_1_2" name= "element_1_2" class="element text" maxlength="255" size="20" value="" required />
 				  <label>Last</label>
 				</span><p class="guidelines" id="guide_1"><small>Name instructions.</small></p>
 				</li>
 				<li id="li_2" >
 				<label class="description" for="element_2">Birthdate </label>
 				<span>
-				  <input id="element_2_1" name="element_2_1" class="element text" size="2" maxlength="2" value="" type="text"> /
+				  <input id="element_2_1" name="element_2_1" class="element text" size="2" maxlength="2" value="" type="text" required /> /
 				  <label for="element_2_1">MM</label>
 				</span>
 				<span>
-				  <input id="element_2_2" name="element_2_2" class="element text" size="2" maxlength="2" value="" type="text"> /
+				  <input id="element_2_2" name="element_2_2" class="element text" size="2" maxlength="2" value="" type="text" required /> /
 				  <label for="element_2_2">DD</label>
 				</span>
 				<span>
-				  <input id="element_2_3" name="element_2_3" class="element text" size="4" maxlength="4" value="" type="text">
+				  <input id="element_2_3" name="element_2_3" class="element text" size="4" maxlength="4" value="" type="text" required />
 				  <label for="element_2_3">YYYY</label>
 				</span>
 
@@ -65,13 +65,13 @@
 				<li id="li_3" >
 				<label class="description" for="element_3">Hometown</label>
 				<div>
-				  <input id="element_3" name="element_3" class="element text medium" type="text" maxlength="255" value=""/>
+				  <input id="element_3" name="element_3" class="element text medium" type="text" maxlength="255" value="" required />
 				</div><p class="guidelines" id="guide_3"><small>Hometown instructions.</small></p>
 				</li>
 				<li id="li_4" >
 				<label class="description" for="element_4">Job</label>
 				<div>
-				  <input id="element_4" name="element_4" class="element text medium" type="text" maxlength="255" value=""/>
+				  <input id="element_4" name="element_4" class="element text medium" type="text" maxlength="255" value="" required />
 				</div><p class="guidelines" id="guide_4"><small>Job instructions.</small></p>
 				</li>
     <li class="buttons">
