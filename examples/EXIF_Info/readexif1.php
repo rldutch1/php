@@ -1,5 +1,5 @@
 <?php
-
+//https://hotexamples.com/examples/-/-/exif_read_data/php-exif_read_data-function-examples.html
 $dat = exif_read_data("20190627012940.P6270046.JPG","EXIF");
 print_r($dat);
 
@@ -26,7 +26,7 @@ print_r($dat);
 //// Just pass your array or string and the UTF8 encode will be fixed
 //$data = convert_from_latin1_to_utf8_recursively($dat);
 echo json_encode($dat);
- 
+
 /*
 Array
 (
@@ -44,24 +44,24 @@ Array
             [IsColor] => 1
             [ByteOrderMotorola] => 0
             [ApertureFNumber] => f/2.8
-            [UserComment] =>  
+            [UserComment] =>
             [UserCommentEncoding] => UNDEFINED
             [Thumbnail.FileType] => 2
             [Thumbnail.MimeType] => image/jpeg
         )
 
-    [ImageDescription] => OLYMPUS DIGITAL CAMERA         
-    [Make] => OLYMPUS IMAGING CORP.  
-    [Model] => TG-1            
+    [ImageDescription] => OLYMPUS DIGITAL CAMERA
+    [Make] => OLYMPUS IMAGING CORP.
+    [Model] => TG-1
     [Orientation] => 1
     [XResolution] => 314/1
     [YResolution] => 314/1
     [ResolutionUnit] => 2
-    [Software] => Version 1.0                    
+    [Software] => Version 1.0
     [DateTime] => 2019:06:27 01:29:41
-    [Artist] => 
+    [Artist] =>
     [YCbCrPositioning] => 2
-    [Copyright] => 
+    [Copyright] =>
     [Exif_IFD_Pointer] => 194
     [GPS_IFD_Pointer] => 674
     [UndefinedTag:0xC4A5] => PrintIM0300%
@@ -97,7 +97,7 @@ P` 	
     [Flash] => 16
     [FocalLength] => 450/100
     [MakerNote] => OLYMPUS
-    [UserComment] =>  
+    [UserComment] =>
     [FlashPixVersion] => 0100
     [ColorSpace] => 1
     [ExifImageWidth] => 2560
@@ -115,7 +115,7 @@ P` 	
     [Saturation] => 0
     [Sharpness] => 1
     [GPSVersion] => 
-    [GPSLatitudeRef] => 
+    [GPSLatitudeRef] =>
     [GPSLatitude] => Array
         (
             [0] => 0/0
@@ -123,7 +123,7 @@ P` 	
             [2] => 0/0
         )
 
-    [GPSLongitudeRef] => 
+    [GPSLongitudeRef] =>
     [GPSLongitude] => Array
         (
             [0] => 0/0
@@ -143,8 +143,8 @@ P` 	
 
 foreach (glob("*.JPG") as $filename) {
     $dat1 = exif_read_data($filename,"EXIF");
-    echo $dat1["FileName"] . " - " . 
-    $dat1["GPSLatitudeRef"] . " " . $dat1["GPSLatitude"][0] . " " . chr(176) . " " . $dat1["GPSLatitude"][1] . "\"" . $dat1["GPSLatitude"][2] . "\', " . 
+    echo $dat1["FileName"] . " - " .
+    $dat1["GPSLatitudeRef"] . " " . $dat1["GPSLatitude"][0] . " " . chr(176) . " " . $dat1["GPSLatitude"][1] . "\"" . $dat1["GPSLatitude"][2] . "\', " .
     $dat1["GPSLongitudeRef"] . " " . $dat1["GPSLongitude"][0] . " " . chr(176) . " " . $dat1["GPSLongitude"][1] . "\"" . $dat1["GPSLongitude"][2] . "\'\n";
 }
 

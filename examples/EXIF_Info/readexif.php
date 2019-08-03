@@ -1,5 +1,5 @@
 <?php
-
+//https://hotexamples.com/examples/-/-/exif_read_data/php-exif_read_data-function-examples.html
 $dat = exif_read_data("20190627012940.P6270046.JPG","EXIF");
 print_r($dat);
 //public static function convert_from_latin1_to_utf8_recursively($dat)
