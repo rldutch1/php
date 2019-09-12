@@ -1,4 +1,12 @@
 <?php
+//Program Author: Robert Holland
+//Program Name: randomtest.php
+//Creation Date: Saturday, July 14, 2018 16:15:09 -0700
+//Last Modified:
+//Purpose: Generate random numbers for alarm test program.
+//Request #:
+//----------------------------------------------------------------------------
+
 $code = rand(1000,9999);
 $task_num = rand(1,3);
 $ct = $code . $task_num;
