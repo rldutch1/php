@@ -1,6 +1,7 @@
 <?php
+//After working on this file, I found a nice utility called exiftool that works really nice with EXIF information in files. I have found it is more efficient than the PHP exif functions.
+
 //https://hotexamples.com/examples/-/-/exif_read_data/php-exif_read_data-function-examples.html
-//https://stackoverflow.com/questions/4901133/json-and-escaping-characters
 //$dat = exif_read_data("20190627012940.P6270046.JPG","EXIF");
 //print_r($dat);
 
