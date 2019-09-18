@@ -3,18 +3,19 @@
 //Program Name: randomcharacters.php
 //Creation Date: Thursday, September 12, 2019 20:33:43
 //Last Modified:
-//Purpose: Generate random characters.
+//Purpose: Generate a specified number of random characters.
 //Request #:
 //----------------------------------------------------------------------------
 
 if ($argc == 2) { //Needed to check for \$argc on Ubuntu because isset(argv[0]) wasn't working.
 //echo $argc . "\r\n";	
-    $length = $argv[1]; //Need to check if this is an integer.
-echo "\r\n";
+    $length = $argv[1];
+if (is_int(intval($length))) { //Need to check if this is an integer.
 //echo "argc is: " . $argc;
 //echo $length."\r\n";
 $randomname = generateRandomString($length); //Pass the number of random characters to generate.
 echo $randomname . "\r\n";
+	}
 }
 else {
 //echo "\$argc does not equal 1.\r\n";	
