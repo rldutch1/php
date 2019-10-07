@@ -1,0 +1,2 @@
+https://stackoverflow.com/questions/22316348/converting-degree-minutes-seconds-dms-to-decimal-in-php
+
