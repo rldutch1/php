@@ -16,10 +16,10 @@ else if (is_null($b)){
 	echo "Variable 'b' is not set because it is null.\r\n<br>";
 }
 
-$firstname = null;
-$lastname  = null;
+//$firstname = null;
+//$lastname  = null;
 
-function hello($firstname, $lastname){
+function hello($firstname = null, $lastname = null){
 if (isset($firstname) && isset($lastname)) {
 echo "Hello {$firstname} {$lastname}\r\n<br>";
 }
