@@ -24,7 +24,8 @@
 			str_replace("$", "", str_replace(")", "", str_replace("(", "", str_replace("'", "", str_replace(";", "", str_replace("=", "", str_replace(",", "", str_replace(" ", "_", $file)))))))) . //Remove spaces, commas, equal signs, semi-colons, apostrophes, left parethesis, right parenthesis, dollar sign.
 			"<br />"; // DO NOT USE \r\n BECAUSE IT WILL PUT A CARRIAGE RETURN IN THE FILENAME!
 		}
-		//Need to remove "()" from the filenames.
+		//The rename utility is useful for removing the carriage return on files. rename $'\r' '' *.txt*
+		//https://unix.stackexchange.com/questions/189784/remove-newlines-in-file-names
 	}
 
 /*
