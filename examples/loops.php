@@ -16,7 +16,7 @@ for (init counter; test counter; increment counter) {<br />
 <br />
 <b>Example:</b><br />
 		for ($count=0; $count <= 10; $count++) {<br />
-			echo "Count is: " . $count . ", <br />";<br />
+			echo "Count is: " . $count . ",";<br />
 			}<br />
 <br />
 	<?php
@@ -38,7 +38,7 @@ for (init counter; test counter; increment counter) {<br />
 <br />
 <b>Example:</b><br />
 		$ages = array(4, 8, 15, 16, 23, 42);<br />
-		// using each value
+		// using each value<br />
 		foreach ($ages as $age) {<br />
 			echo "Age is " . $age;<br />
 		}<br />
