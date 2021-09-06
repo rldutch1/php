@@ -34,7 +34,7 @@ echo "<br />" . $xyz . "<br />";
         //foreach (glob("{*.pdf,*.jpg}",GLOB_BRACE ) as $file) {
         
         //Multiple files on AIX:
-        foreach (array_merge(glob("*.pdf"),glob("*.jpg")) as $file) { 
+        foreach (array_merge(glob("*.pdf"),glob("*.PDF"),glob("*.jpg"),glob("*.JPG")) as $file) { 
                 echo "<a href='" . $file . "' target='_blank'>" . $file . "</a><br />";
         }
 
