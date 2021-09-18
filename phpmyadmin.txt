@@ -1,0 +1,3 @@
+How to get a meaningful column to display in foreign key relationships - https://stackoverflow.com/questions/14104206/how-do-i-display-content-for-foreign-keys-in-phpmyadmin
+https://docs.phpmyadmin.net/en/latest/relations.html#relation-view
+
