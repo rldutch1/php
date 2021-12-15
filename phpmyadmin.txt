@@ -1,3 +1,62 @@
 How to get a meaningful column to display in foreign key relationships - https://stackoverflow.com/questions/14104206/how-do-i-display-content-for-foreign-keys-in-phpmyadmin
 https://docs.phpmyadmin.net/en/latest/relations.html#relation-view
 
+CREATE USER 'pma'@'localhost' identified with mysql_native_password by 'Some Cool Password';
+GRANT ALL PRIVILEGES ON phpmyadmin.* TO 'pma'@'localhost' WITH GRANT OPTION;
+FLUSH PRIVILEGES;
+
+https://stackoverflow.com/questions/21033059/pma-database-not-ok-in-phpmyadmin-upgrade:
+Fix Configuration of pmadb not OK in phpMyAdmin
+Feb 6, 2015 · 1 min read
+
+You may get this message in pmpMyAdmin:
+
+To fix this you have to import/create the phpmyadmin database with it's tables. An SQL script called create_tables.sql should be in the scripts, examples or sql folder of your phpMyAdmin installation.
+
+mysql -u root -p < create_tables.sql
+
+Then create a user called pma and give it permissions to the phpmyadmin database:
+
+CREATE USER 'pma'@'localhost' identified with mysql_native_password by 'Some Cool Password';
+GRANT ALL PRIVILEGES ON `phpmyadmin`.* TO 'pma'@'localhost' WITH GRANT OPTION;
+FLUSH PRIVILEGES;
+
+Now edit config.inc.php and configure/uncomment those lines:
+
+/*
+ * phpMyAdmin configuration storage settings.
+ */
+
+/* User used to manipulate with storage */
+$cfg['Servers'][$i]['controlhost'] = 'localhost';
+// $cfg['Servers'][$i]['controlport'] = '';
+$cfg['Servers'][$i]['controluser'] = 'pma';
+$cfg['Servers'][$i]['controlpass'] = 'Some Cool Password';
+
+/* Storage database and tables */
+$cfg['Servers'][$i]['pmadb'] = 'phpmyadmin';
+$cfg['Servers'][$i]['bookmarktable'] = 'pma__bookmark';
+$cfg['Servers'][$i]['relation'] = 'pma__relation';
+$cfg['Servers'][$i]['table_info'] = 'pma__table_info';
+$cfg['Servers'][$i]['table_coords'] = 'pma__table_coords';
+$cfg['Servers'][$i]['pdf_pages'] = 'pma__pdf_pages';
+$cfg['Servers'][$i]['column_info'] = 'pma__column_info';
+$cfg['Servers'][$i]['history'] = 'pma__history';
+$cfg['Servers'][$i]['table_uiprefs'] = 'pma__table_uiprefs';
+$cfg['Servers'][$i]['tracking'] = 'pma__tracking';
+$cfg['Servers'][$i]['designer_coords'] = 'pma__designer_coords';
+$cfg['Servers'][$i]['userconfig'] = 'pma__userconfig';
+$cfg['Servers'][$i]['recent'] = 'pma__recent';
+$cfg['Servers'][$i]['favorite'] = 'pma__favorite';
+$cfg['Servers'][$i]['users'] = 'pma__users';
+$cfg['Servers'][$i]['usergroups'] = 'pma__usergroups';
+$cfg['Servers'][$i]['navigationhiding'] = 'pma__navigationhiding';
+$cfg['Servers'][$i]['savedsearches'] = 'pma__savedsearches';
+$cfg['Servers'][$i]['central_columns'] = 'pma__central_columns';
+$cfg['Servers'][$i]['designer_settings'] = 'pma__designer_settings';
+$cfg['Servers'][$i]['export_templates'] = 'pma__export_templates';
+
+Finally logout and login again to phpMyadmin.
+
+Ref: http://stackoverflow.com/questions/21033059/pma-database-not-ok-in-phpmyadmin-upgrade
+https://wiki.phpmyadmin.net/pma/Configuration_storage
