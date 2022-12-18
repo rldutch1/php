@@ -5,7 +5,7 @@
 
 //Use "glob" to collect filenames in a directory and display them:
 	foreach(glob('*.*') as $file) {
-		echo "<a href='" . $file . "'>" . $file . "</a>\r\n";
+		echo "<a href='" . $file . "' target='_blank'>" . $file . "</a>\r\n";
 	}
 ?>
 
@@ -28,8 +28,10 @@
 
 //Another way to display specific files:
   $files = glob("*.{avi,mp4,mts,php,png,PNG}", GLOB_BRACE);
-   foreach($files as $file)
-   echo $file. "<br />";
+   foreach($files as $file) {
+		echo "<a href='" . $file . "' target='_blank'>" . $file . "</a>\r\n";
+    //echo $file. "<br />";
+	}
 
 
 /*

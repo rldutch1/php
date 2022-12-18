@@ -1,0 +1,146 @@
+https://computingforgeeks.com/install-and-configure-phpmyadmin-on-fedora/
+Install and Configure phpMyAdmin on Fedora 35/34/32/31/30
+By
+Josphat Mutai -
+November 4, 2021 26470
+1
+
+In this guide, we will look at how to Install and Configure phpMyAdmin on Fedora 35/34/32/31/30. PHPMyAdmin is an open source software tool written in PHP, intended to handle the administration of MySQL over the Web interface.
+
+phpMyAdmin has support for a wide range of operations on MySQL, MariaDB, and Drizzle. It is often used to perform common Database operations (managing databases, tables, columns, relations, indexes, users, permissions, etc) through an intuitive and easy to use web interface.
+
+Follow the steps below to Install phpMyAdmin on Fedora35/34/32/31/30.
+Step 1: Install Apache HTTP Server and PHP
+
+Apache HTTP server and PHP are required dependencies for phpMyAdmin. Install them first :
+
+sudo dnf -y install httpd php php-cli php-php-gettext php-mbstring php-mcrypt php-mysqlnd php-pear php-curl php-gd php-xml php-bcmath php-zip
+
+Configure httpd basic settings:
+
+Edit the configuration file /etc/httpd/conf/httpd.conf and set:
+
+ServerAdmin admin@example.com
+ServerName  example.com
+ServerTokens Prod
+
+You can optionally set Keepalive:
+
+KeepAlive On
+
+Enable and start httpd service:
+
+sudo systemctl start httpd
+sudo systemctl enable httpd
+
+If you have firewalld running, allow both http and https services:
+
+sudo firewall-cmd --add-service={http,https} --permanent
+sudo firewall-cmd --reload
+
+Confirm your installed PHP version:
+
+$ php -v
+PHP 7.3.4 (cli) (built: Apr  2 2019 13:48:50) ( NTS )
+Copyright (c) 1997-2018 The PHP Group
+Zend Engine v3.3.4, Copyright (c) 1998-2018 Zend Technologies
+
+Loaded extensions can be viewed by passing -m option to the phpcommand
+
+$ php -m
+
+Set PHP timezone on the file /etc/php.ini
+
+date.timezone = Africa/Nairobi
+
+See a complete List of Supported Timezones.
+Step 2: Install and configure phpMyAdmin on Fedora 35/34/32/31/30
+
+After PHP and Apache have been installed, you can install phpMyAdmin
+
+sudo dnf -y install phpMyAdmin
+
+The version installed on my Fedora machine is 4.8.3
+
+$ rpm -qi phpMyAdmin
+Name        : phpMyAdmin
+Version     : 4.8.5
+Release     : 2.fc30
+Architecture: noarch
+Install Date: Thu 02 May 2019 10:03:16 AM EAT
+Group       : Unspecified
+Size        : 26212455
+License     : GPLv2+ and MIT and BSD
+Signature   : RSA/SHA256, Sat 02 Feb 2019 08:33:08 PM EAT, Key ID ef3c111fcfc659b9
+Source RPM  : phpMyAdmin-4.8.5-2.fc30.src.rpm
+Build Date  : Sat 02 Feb 2019 01:53:43 PM EAT
+Build Host  : buildvm-ppc64le-15.ppc.fedoraproject.org
+Relocations : (not relocatable)
+Packager    : Fedora Project
+Vendor      : Fedora Project
+URL         : https://www.phpmyadmin.net/
+Bug URL     : https://bugz.fedoraproject.org/phpMyAdmin
+Summary     : Handle the administration of MySQL over the World Wide Web
+Description :
+phpMyAdmin is a tool written in PHP intended to handle the administration of
+MySQL over the World Wide Web. Most frequently used operations are supported
+by the user interface (managing databases, tables, fields, relations, indexes,
+users, permissions), while you still have the ability to directly execute any
+SQL statement.
+
+Features include an intuitive web interface, support for most MySQL features
+(browse and drop databases, tables, views, fields and indexes, create, copy,
+drop, rename and alter databases, tables, fields and indexes, maintenance
+server, databases and tables, with proposals on server configuration, execute,
+edit and bookmark any SQL-statement, even batch-queries, manage MySQL users
+and privileges, manage stored procedures and triggers), import data from CSV
+and SQL, export data to various formats: CSV, SQL, XML, PDF, OpenDocument Text
+and Spreadsheet, Word, Excel, LATEX and others, administering multiple servers,
+creating PDF graphics of your database layout, creating complex queries using
+Query-by-example (QBE), searching globally in a database or a subset of it,
+transforming stored data into any format using a set of predefined functions,
+like displaying BLOB-data as image or download-link and much more...
+
+Limit access to phpMyAdmin to your only trusted networks
+
+sudo vim /etc/httpd/conf.d/phpMyAdmin.conf
+
+Edit the Require ip lines – both on Line 17 and 34 of the file.
+
+Require ip 127.0.0.1 192.168.18.0/24
+
+Save the changes and restart httpd service
+
+sudo systemctl restart httpd
+
+Step 3: Access phpMyAdmin interface
+
+Access  [http://(your hostname or IP address)/phpmyadmin/] from your favorite web browser and network whitelisted.
+install phpmyadmin fedora 29 fedora 28 login page
+
+Login with your Database user to start administering database operations from phpMyAdmin web interface.
+Step 4: Change Authentication Plugin for MySQL 8.0
+
+To be able to authenticate to MySQL 8.0, login to MySQL CLI and change  Authentication Plugin.
+
+$ mysql -u root -p
+Enter password: 
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 26
+Server version: 8.0.13 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2018, Oracle and/or its affiliates. All rights reserved.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'ph/axo>vJe;789';
+Query OK, 0 rows affected (0.11 sec)
+
+mysql> QUIT
+Bye
+
+Enjoy administering your MySQL or MariaDB database server with phpMyAdmin.
