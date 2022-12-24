@@ -1,0 +1,11 @@
+These are common practice settings in php.ini:
+
+session.cookie_lifetime = 0 //Keeps the session open until the browser is closed.
+session.use_only_cookies = 1 //Prevents the session ID from coming from a POST/GET request. Only from a cookie.
+session.cookie_httponly = 1 //Prevents JavaScript access and thwarts cross-site scripting attempts to steal cookies using JavaScript.
+session.cookie_secure = 1 //Will only allow access to the session ID if you are using HTTPS.
+session.cookie_samesite = "Lax" //Prevents the browser from sending cookies with cross-site requests. ("None","Lax", or "Strict"): PHP>=7.3
+	Can also set the sesson cookie paramters directly in the PHP code:
+		session_set_cookie_params(expire, path, domain, secure, httponly)
+
+
