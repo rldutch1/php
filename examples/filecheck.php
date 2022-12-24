@@ -9,6 +9,17 @@
 // Purpose: Check if a file exists on a network share.
 // ----------------------------------------------------------------------------
 
+$data = '$file = "\\\\server1\\abc\\123\\test.accdb";
+if (is_file($file)) {
+	    echo "File exists.\r\n";
+}
+else {
+	    echo "File does not exist.\r\n";
+}
+?>';
+
+echo nl2br(htmlentities($data)) . "<br /><hr />";
+
 $file = "\\\\server1\\abc\\123\\test.accdb";
 if (is_file($file)) {
 	    echo "File exists.\r\n";

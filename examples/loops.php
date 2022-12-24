@@ -9,6 +9,27 @@
 	</head>
 	<body>
 	<b>For Loop</b><br />
+<?php
+$data='
+Syntax: 
+	for (expr1, expr2, expr3)
+		statement;
+		
+	expr1 is only evaluated at the very beginning of the loop once.
+	expr2 is evaluated at the beginning of every loop. 
+	expr3 is what happens at the end of each and every loop. 
+	
+Syntax restated: 
+	for (initial, test, each)
+		statement;
+	
+	initial: is the initial value we are giving where we are initializing something.
+	test: is the test we are performing each time and as long as it is true the loop will continue.
+	each: is the action that will be performed at the end of every loop before looping back to the top and doing the test again.
+
+';
+echo nl2br(htmlentities($data)) . "<br /><hr />";
+?>
 <b>Syntax:</b><br />
 for (init counter; test counter; increment counter) {<br />
   code to be executed for each iteration;<br />
@@ -16,7 +37,7 @@ for (init counter; test counter; increment counter) {<br />
 <br />
 <b>Example:</b><br />
 		for ($count=0; $count <= 10; $count++) {<br />
-			echo "Count is: " . $count . ",";<br />
+			echo "Count is: " . $count . ", <br />";<br />
 			}<br />
 <br />
 	<?php
