@@ -3,6 +3,7 @@ echo "
 &lt;?php<br />
 //How to write prepare and execute statements in OOP PDO?<br />
 //https://stackoverflow.com/questions/42551050/how-to-write-prepare-and-execute-statements-in-oop-pdo<br />
+//https://stackoverflow.com/questions/18679448/pdo-class-is-this-technically-correct<br />
 <br />
 include'oop_pdo_class_insert_read1.php';<br />
 <br />
@@ -18,6 +19,8 @@ include'oop_pdo_class_insert_read1.php';<br />
 //if(\$users-&gt;run()){<br />
 //<br />
 //echo \"record inserted\";<br />
+//\$lastid = \$users->lastInsertId(); //Getting the last inserted ID<br />
+//echo \"Last ID = \" . \$lastid . \"\\r\\n\";<br />
 //}<br />
 <br />
 ////Retrieve a single row of data from the database using the SingleRow method.<br />

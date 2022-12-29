@@ -90,12 +90,6 @@ class Connection<br />
           return \$this->dbh->lastInsertId();<br />
 		}<br />
 <br />
-		//Return multiple rows of data number array.<br />
-		//public function Num(){<br />
-          //\$this->run();<br />
-          //return \$this->stmt->fetchNum();<br />
-    //}<br />
-<br />
 }
 <br />
 <br />
