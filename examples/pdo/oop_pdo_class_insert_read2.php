@@ -180,6 +180,10 @@ include'oop_pdo_class_insert_read1.php';<br />
 	//  for(\$x = 0; \$x &lt; \$i; \$x++){<br />
 	//	 	echo \$rows[\$x]['TABLE_NAME'] . \" \" . \$rows[\$x]['IS_UPDATABLE'] . \"\r\n\";<br />
 	//  }<br />
+<br /><br />
+//Last Insert ID:<br />
+
+
 ?&gt;<br />
 
 ";
