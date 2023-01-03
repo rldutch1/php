@@ -50,17 +50,17 @@ else {
     $argument1 = $_GET["argument1"];
     $argument2 = $_GET["argument2"];
 echo "\r\n";
-echo md5($argument1)."<br />";
-echo md5($argument2)."<br />";
-echo "Current date and time: " . md5(date("Y-m-d h:i:s:m"))."<br />";
-echo "UTC: " . date("Y-m-d H:i:su")."<br />";
+echo "<b>" . md5($argument1)."</b><br />";
+echo "<b>" . md5($argument2)."</b><br />";
+echo "<b>" . "Current date and time: " . md5(date("Y-m-d h:i:s:m"))."</b><br />";
+echo "<b>" . "UTC: " . date("Y-m-d H:i:su")."</b><br />";
 
 $dt = new DateTime();
 $dt->setTimezone(new DateTimeZone('America/Phoenix'));
 $dt->setTimestamp(time());
-echo $dt->format("Y-m-d H:i:su");
+echo "<b>" . $dt->format("Y-m-d H:i:su")."</b><br />";
+echo "<b>" . "20-digit date: " . $dt->format("YmdHisu")."</b><br />";
 }
 /*Source: http://stackoverflow.com/questions/9612166/passing-command-line-arguments-to-a-php-script*/
 /*Example site: http://www.miraclesalad.com/webtools/md5.php */
 ?>
-
