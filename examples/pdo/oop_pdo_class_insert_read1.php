@@ -85,11 +85,10 @@ class Connection<br />
           return \$this->stmt->fetchall();<br />
     }<br />
 <br />
-		//Return multiple rows of data number array.<br />
-		//public function Num(){<br />
-          //\$this->run();<br />
-          //return \$this->stmt->fetchNum();<br />
-    //}<br />
+		//Return last_InsertId.<br />
+          public function lastInsertId(){<br />
+          return \$this->dbh->lastInsertId();<br />
+		}<br />
 <br />
 }
 <br />
