@@ -3,6 +3,7 @@
 //Program Name: randomcharacters.php
 //Creation Date: Thursday, September 12, 2019 20:33:43
 //Last Modified:
+//Source: //https://stackoverflow.com/questions/4356289/php-random-string-generator/4356295#4356295
 //Purpose: Generate a specified number of random characters.
 //Request #:
 //----------------------------------------------------------------------------
