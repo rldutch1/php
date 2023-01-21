@@ -51,4 +51,9 @@ function myfunction($value,$key)
  for($x = 0; $x < $i; $x++){
  array_walk($rows[$x],"myfunction");
  }
+
+ //information_schema
+ //mysql
+ //performance_schema
+
 ?>
