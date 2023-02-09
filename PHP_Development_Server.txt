@@ -1,0 +1,9 @@
+PHP Development Server
+PHP contains simple web server which can be used instead of full-featured web server. It is intended to be used only for development, not for a production environment.
+
+You can start PHP development server by typing this in your project’s root:
+
+$ sudo php --server localhost:8080 --docroot  .
+Server will be accessible on http://localhost:8080/.
+
+Source: https://developer.fedoraproject.org/tech/languages/php/php-installation.html
