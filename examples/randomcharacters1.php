@@ -1,4 +1,4 @@
-<?php 
+<?php
 //Program Author: Robert Holland
 //Program Name: randomcharacters.php
 //Creation Date: Thursday, September 12, 2019 20:33:43

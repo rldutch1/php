@@ -14,7 +14,7 @@ $data="
 //Rename files and remove spaces, commas, equal signs, semi-colons, apostrophes, etc.:
 	foreach(glob(&#034;{*.amr,*.AMR,*.mp3,*.MP3}&#034;,GLOB_BRACE ) as &#36;file) {
 		if (strpos(&#36;file, &#34; &#34;) > 0) { //If there are more than 0 spaces in the name.
-			&#36;x = &#34;mv \&#34;&#34; . &#36;file . &#34;\&#34; &#34;; 
+			&#36;x = &#34;mv \&#34;&#34; . &#36;file . &#34;\&#34; &#34;;
 			&#36;y = str_replace(&#34; &#34;, &#34;_&#34;, &#36;file); //Remove spaces.
 			&#36;y = str_replace(&#34;,&#34;, &#34;&#34;, &#36;y); //Remove commas.
 			&#36;y = str_replace(&#34;=&#34;, &#34;&#34;, &#36;y); //Remove equals.
