@@ -1,6 +1,6 @@
 <?php
 #Source: http://www.if-not-true-then-false.com/2010/php-calculate-real-differences-between-two-dates-or-timestamps/
-echo 'TimeDifferences.php file. Original name was dateDiff.php<br />';
+echo 'TimeDifferences.php file. Original name was dateDiff.php<br /><hr /><br />';
 
   // Set timezone
   date_default_timezone_set("UTC");
@@ -116,15 +116,37 @@ Output:
 1264514564
 */
 
-echo "Robert Holland is: " . dateDiff("now", "1968-07-08 10:07:00") . ".<br />";
-echo "Jeanette Holland is: " . dateDiff("now", "1968-12-27 00:00:00") . ".<br />";
-echo "Leah Holland is: " . dateDiff("now", "2004-12-03 16:29:00") . ".<br />";
-echo "Jason Holland is: " . dateDiff("now", "2008-04-03 16:09:00") . ".<br />";
-echo "Keira Holland is: " . dateDiff("now", "2008-12-01 01:24:00") . ".<br />";
+/*
 echo "Aiko Holland is: " . dateDiff("now", "2015-03-01 00:00:00") . ".<br />";
+echo "Jason Holland is: " . dateDiff("now", "2008-04-03 16:09:00") . ".<br />";
+echo "Jeanette Holland is: " . dateDiff("now", "1968-12-27 00:00:00") . ".<br />";
+echo "Keira Holland is: " . dateDiff("now", "2008-12-01 01:24:00") . ".<br />";
+echo "Leah Holland is: " . dateDiff("now", "2004-12-03 16:29:00") . ".<br />";
+echo "Oral Lester Smithers is: " . dateDiff("now", "1940-07-12 00:00:00") . ".<br />";
+echo "Lisa (Smithers) Eddy is: " . dateDiff("now", "1966-04-26 00:00:00") . ".<br />";
+echo "Patricia and Priscilla Spriggs are: " . dateDiff("now", "1942-01-02 00:00:00") . ".<br />";
+echo "Robert D. Spriggs is: " . dateDiff("now", "1915-11-27 00:00:00") . ".<br />";
+echo "Robert Holland is: " . dateDiff("now", "1968-07-08 10:07:00") . ".<br />";
+echo "Robin Spriggs is: " . dateDiff("now", "1955-01-01 00:00:00") . ".<br />";
+echo "Shiela (Smithers) Taylor is: " . dateDiff("now", "1963-04-01 00:00:00") . ".<br />";
 echo "Stanley Holland is: " . dateDiff("now", "1968-07-08 10:05:00") . ".<br />";
 echo "Vernon C. Holland III is: " . dateDiff("now", "1964-09-09 00:00:00") . ".<br />";
-echo "Robert D. Spriggs is: " . dateDiff("now", "1915-11-27 00:00:00") . ".<br />";
-echo "Patricia and Priscilla Spriggs are: " . dateDiff("now", "1942-01-02 00:00:00") . ".<br />";
-echo "Robin Spriggs is: " . dateDiff("now", "1955-01-01 00:00:00") . ".<br />";
+*/
+
+echo "<table>";
+echo "<tr><td title='2015-03-01'>Aiko Holland is: " . dateDiff("now", "2015-03-01 00:00:00") . ".</td></tr>";
+echo "<tr><td title='2008-04-03 16:09:00'>Jason Holland is: " . dateDiff("now", "2008-04-03 16:09:00") . ".</td></tr>";
+echo "<tr><td title='1968-12-27'>Jeanette Holland is: " . dateDiff("now", "1968-12-27 00:00:00") . ".</td></tr>";
+echo "<tr><td title='2008-12-01 01:24:00'>Keira Holland is: " . dateDiff("now", "2008-12-01 01:24:00") . ".</td></tr>";
+echo "<tr><td title='2004-12-03 16:29:00'>Leah Holland is: " . dateDiff("now", "2004-12-03 16:29:00") . ".</td></tr>";
+echo "<tr><td title='1940-07-12'>Oral Lester Smithers is: " . dateDiff("now", "1940-07-12 00:00:00") . ".</td></tr>";
+echo "<tr><td title='1966-04-26'>Lisa (Smithers) Eddy is: " . dateDiff("now", "1966-04-26 00:00:00") . ".</td></tr>";
+echo "<tr><td title='1942-01-02'>Patricia and Priscilla Spriggs are: " . dateDiff("now", "1942-01-02 00:00:00") . ".</td></tr>";
+echo "<tr><td title='1915-11-27'>Robert D. Spriggs is: " . dateDiff("now", "1915-11-27 00:00:00") . ".</td></tr>";
+echo "<tr><td title='1968-07-08 10:07:00'>Robert Holland is: " . dateDiff("now", "1968-07-08 10:07:00") . ".</td></tr>";
+echo "<tr><td title='1955-01-01'>Robin Spriggs is: " . dateDiff("now", "1955-01-01 00:00:00") . ".</td></tr>";
+echo "<tr><td title='1963-04-01'>Shiela (Smithers) Taylor is: " . dateDiff("now", "1963-04-01 00:00:00") . ".</td></tr>";
+echo "<tr><td title='1968-07-08 10:05:00'>Stanley Holland is: " . dateDiff("now", "1968-07-08 10:05:00") . ".</td></tr>";
+echo "<tr><td title='1964-09-09'>Vernon C. Holland III is: " . dateDiff("now", "1964-09-09 00:00:00") . ".</td></tr>";
+echo "</table>";
 ?>
