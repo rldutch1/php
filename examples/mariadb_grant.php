@@ -54,13 +54,14 @@ function myfunction($value,$key)<br />
  //information_schema<br />
  //mysql<br />
  //performance_schema<br />
+ //sys<br />
 <br />
  $i=count($rows);<br />
  for($x = 0; $x &lt; $i; $x++){<br />
  	$y=$rows[$x]; //Reduce the array.<br />
  	//array_diff to remove critical databases from the output.<br />
  	//This prevents accidentally assigning permissions to critical system databases.<br />
- 	$y = array_diff($y, array(&quot;information_schema&quot;, &quot;performance_schema&quot;,&quot;mysql&quot;));<br />
+ 	$y = array_diff($y, array(&quot;information_schema&quot;, &quot;performance_schema&quot;,&quot;mysql&quot;,&quot;sys&quot;));<br />
  array_walk($y,&quot;myfunction&quot;);<br />
  }<br />
 ?&gt;<br />
