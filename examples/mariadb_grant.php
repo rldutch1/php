@@ -49,20 +49,22 @@ function myfunction(\$value,\$key)<br />
  //Example:<br />
  //GRANT USAGE ON robdba3.* TO &#039;robdba5&#039;@&#039;%&#039; REQUIRE NONE WITH MAX_QUERIES_PER_HOUR 0 MAX_CONNECTIONS_PER_HOUR 0 MAX_UPDATES_PER_HOUR 0 MAX_USER_CONNECTIONS 0; GRANT ALL PRIVILEGES ON `robdba3`.* TO &#039;robdba5&#039;@&#039;%&#039;; GRANT ALL PRIVILEGES ON `robdba3\_%`.* TO &#039;robdba5&#039;@&#039;%&#039;;<br />
  }<br />
+//Remove these critical system databases from the output.<br />
+ //information_schema<br />
+ //mysql<br />
+ //performance_schema<br />
+ //sys<br />
+<br />
  \$i=count(\$rows);<br />
  for(\$x = 0; \$x &lt; \$i; \$x++){<br />
  	\$y=\$rows[\$x]; //Reduce the array.<br />
  	//array_diff to remove critical databases from the output.<br />
  	//This prevents accidentally assigning permissions to critical system databases.<br />
- 	\$y = array_diff(\$y, array(&quot;information_schema&quot;, &quot;performance_schema&quot;,&quot;mysql&quot;));<br />
+ 	\$y = array_diff(\$y, array(&quot;information_schema&quot;, &quot;performance_schema&quot;,&quot;mysql&quot;,&quot;sys&quot;));<br />
  array_walk(\$y,&quot;myfunction&quot;);<br />
  }<br />
 <br />
-//Remove these critical system databases from the output.<br />
- //information_schema<br />
- //mysql<br />
- //performance_schema<br />
-<br />
+
 ?&gt;<br />
 ";
 ?>
