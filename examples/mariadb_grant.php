@@ -1,5 +1,8 @@
+<<<<<<< HEAD
 <?php
 echo "
+=======
+>>>>>>> 5f7b923f535c6ac99c5860b5d08fbb5fcdbd0f53
 &lt;?php<br />
 // ----------------------------------------------------------------------------<br />
 // Script Author: Robert Holland<br />
@@ -16,6 +19,7 @@ echo "
 //https://stackoverflow.com/questions/369602/deleting-an-element-from-an-array-in-php<br />
 //https://stackoverflow.com/questions/4356289/php-random-string-generator/4356295#4356295<br />
 <br />
+<<<<<<< HEAD
 include&#039;connect.php&#039;;<br />
 <br />
 \$dbshow = new Connection(); //Instantiate a new connection.<br />
@@ -56,13 +60,63 @@ function myfunction(\$value,\$key)<br />
  	//This prevents accidentally assigning permissions to critical system databases.<br />
  	\$y = array_diff(\$y, array(&quot;information_schema&quot;, &quot;performance_schema&quot;,&quot;mysql&quot;));<br />
  array_walk(\$y,&quot;myfunction&quot;);<br />
+=======
+include_once(&#039;php_this/t4.php&#039;);<br />
+<br />
+<br />
+$dbshow = new Connection(); //Instantiate a new connection.<br />
+$dbshow-&gt;myQuery(&quot;show databases;&quot;);<br />
+$rows = $dbshow-&gt;All();<br />
+<br />
+//Generate random string of specified length.<br />
+  function generateRandomString($length) {<br />
+    $characters = &#039;0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ&#039;;<br />
+    //$characters = &#039;abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ&#039;; //Random uppercase and lowercase letters only.<br />
+    //$characters = &#039;abcdefghijklmnopqrstuvwxyz&#039;; //Random lowercase letters only.<br />
+    //$characters = &#039;ABCDEFGHIJKLMNOPQRSTUVWXYZ&#039;; //Random uppercase letters only.<br />
+    //$characters = &#039;0123456789&#039;; //Random numbers only.<br />
+    $charactersLength = strlen($characters);<br />
+    $randomString = &#039;&#039;;<br />
+  for ($i = 0; $i &lt; $length; $i++) {<br />
+    $randomString .= $characters[rand(0, $charactersLength - 1)];<br />
+  }<br />
+    return $randomString;<br />
+  }<br />
+//$ThePassword = generateRandomString(64); //Pass the number of random characters to generate.<br />
+//echo $ThePassword . &quot;\r\n&quot;;<br />
+<br />
+function myfunction($value,$key)<br />
+ {<br />
+ 	$dbusername = &quot;XXXXX&quot;;<br />
+ 	$ThePassword = generateRandomString(8); //Random 8 characters.<br />
+ //echo &quot;The key $key has the value $value. &quot;;<br />
+ echo &quot;CREATE USER &#039;$dbusername&#039;@&#039;%&#039; IDENTIFIED VIA mysql_native_password USING &#039;$ThePassword&#039;; &lt;br /&gt;&quot;;<br />
+ echo &quot;GRANT USAGE ON $value.* TO &#039;$dbusername&#039;@&#039;%&#039; REQUIRE NONE WITH MAX_QUERIES_PER_HOUR 0 MAX_CONNECTIONS_PER_HOUR 0 MAX_UPDATES_PER_HOUR 0 MAX_USER_CONNECTIONS 0; GRANT ALL PRIVILEGES ON `$value`.* TO &#039;$dbusername&#039;@&#039;%&#039;; GRANT ALL PRIVILEGES ON `$value\_%`.* TO &#039;$dbusername&#039;@&#039;%&#039;; &lt;br /&gt;&lt;hr /&gt;&quot;;<br />
+<br />
+ //Example Output:<br />
+ //GRANT USAGE ON testdatabase.* TO &#039;testuser&#039;@&#039;%&#039; REQUIRE NONE WITH MAX_QUERIES_PER_HOUR 0 MAX_CONNECTIONS_PER_HOUR 0 MAX_UPDATES_PER_HOUR 0 MAX_USER_CONNECTIONS 0; GRANT ALL PRIVILEGES ON `testdatabase`.* TO &#039;testuser&#039;@&#039;%&#039;; GRANT ALL PRIVILEGES ON `testdatabase\_%`.* TO &#039;testuser&#039;@&#039;%&#039;;<br />
+>>>>>>> 5f7b923f535c6ac99c5860b5d08fbb5fcdbd0f53
  }<br />
 <br />
 //Remove these critical system databases from the output.<br />
  //information_schema<br />
  //mysql<br />
  //performance_schema<br />
+<<<<<<< HEAD
 <br />
 ?&gt;<br />
 ";
 ?>
+=======
+ //sys<br />
+<br />
+ $i=count($rows);<br />
+ for($x = 0; $x &lt; $i; $x++){<br />
+ 	$y=$rows[$x]; //Reduce the array.<br />
+ 	//array_diff to remove critical databases from the output.<br />
+ 	//This prevents accidentally assigning permissions to critical system databases.<br />
+ 	$y = array_diff($y, array(&quot;information_schema&quot;, &quot;performance_schema&quot;,&quot;mysql&quot;,&quot;sys&quot;));<br />
+ array_walk($y,&quot;myfunction&quot;);<br />
+ }<br />
+?&gt;<br />
+>>>>>>> 5f7b923f535c6ac99c5860b5d08fbb5fcdbd0f53
