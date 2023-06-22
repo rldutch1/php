@@ -13,8 +13,7 @@ echo &quot;Function arguments:\r\n&quot;;<br />
 	    $second_arg,<br />
 	    $test,<br />
 	    $arg_with_default = 5,<br />
-	    $again = &#039;a default string&#039;,<br />
-	    // This trailing comma was not permitted before 8.0.0.<br />
+	    $again = &#039;a default string&#039;, // This trailing comma was not permitted before 8.0.0.<br />
 	){<br />
 	    echo &quot;\r\n&quot; . $first_arg . &quot; &quot; . $second_arg . &quot; &quot; . $test . &quot; &quot; . $arg_with_default . &quot; &quot; . $again . &quot;\r\n&quot;;<br />
 	}<br />

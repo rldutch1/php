@@ -15,6 +15,7 @@ echo "
 //https://stackoverflow.com/questions/18679448/pdo-class-is-this-technically-correct<br />
 //https://stackoverflow.com/questions/369602/deleting-an-element-from-an-array-in-php<br />
 //https://stackoverflow.com/questions/4356289/php-random-string-generator/4356295#4356295<br />
+//https://mariadb.com/kb/en/create-user/<br />
 <br />
 include&#039;connect.php&#039;;<br />
 <br />
@@ -45,6 +46,7 @@ function myfunction(\$value,\$key)<br />
  	\$ThePassword = generateRandomString(8); //Random 8 characters.<br />
  //echo &quot;The key \$key has the value \$value. &quot;;<br />
  echo &quot;CREATE USER &#039;\$dbusername&#039;@&#039;%&#039; IDENTIFIED VIA mysql_native_password USING &#039;\$ThePassword&#039;; \\r\\n&quot;;<br />
+ echo &quot;CREATE USER &#039;\$dbusername&#039;@&#039;%&#039; SET PASSWORD FOR &#039;\$dbusername&#039;@&#039;%&#039; = PASSWORD(&#039;\$ThePassword&#039;); \\r\\n&quot;;<br />
  echo &quot;GRANT USAGE ON \$value.* TO &#039;\$dbusername&#039;@&#039;%&#039; REQUIRE NONE WITH MAX_QUERIES_PER_HOUR 0 MAX_CONNECTIONS_PER_HOUR 0 MAX_UPDATES_PER_HOUR 0 MAX_USER_CONNECTIONS 0; GRANT ALL PRIVILEGES ON `\$value`.* TO &#039;\$dbusername&#039;@&#039;%&#039;; GRANT ALL PRIVILEGES ON `\$value\_%`.* TO &#039;\$dbusername&#039;@&#039;%&#039;; \\r\\n&quot;;<br />
  //Example:<br />
  //GRANT USAGE ON robdba3.* TO &#039;robdba5&#039;@&#039;%&#039; REQUIRE NONE WITH MAX_QUERIES_PER_HOUR 0 MAX_CONNECTIONS_PER_HOUR 0 MAX_UPDATES_PER_HOUR 0 MAX_USER_CONNECTIONS 0; GRANT ALL PRIVILEGES ON `robdba3`.* TO &#039;robdba5&#039;@&#039;%&#039;; GRANT ALL PRIVILEGES ON `robdba3\_%`.* TO &#039;robdba5&#039;@&#039;%&#039;;<br />
