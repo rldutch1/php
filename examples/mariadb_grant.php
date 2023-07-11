@@ -7,9 +7,10 @@ echo "
 // Creation Date: Fri Jan 20 2023 23:20:08 GMT-0700 (MST)<br />
 // Last Modified: 20230120232231<br />
 // Version: 1.0.0<br />
-// Purpose: Generate MariaDB GRANT statements for databases (You will need to manually remove system DBs).<br />
+// Purpose: Generate MariaDB GRANT statements for databases (This script prevents system databases from being modified).<br />
 // ----------------------------------------------------------------------------<br />
 <br />
+//Information sources:
 //How to write prepare and execute statements in OOP PDO?<br />
 //https://stackoverflow.com/questions/42551050/how-to-write-prepare-and-execute-statements-in-oop-pdo<br />
 //https://stackoverflow.com/questions/18679448/pdo-class-is-this-technically-correct<br />
