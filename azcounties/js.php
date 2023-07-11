@@ -106,9 +106,10 @@ caption
 	}
 </style>
 
+<!-- Two column table. First column radio buttons, second column images. -->
 <form name='test'>
 <table class='fnt'><caption class='fnt'><h2>Arizona Counties</h2></caption>
-    <tr><td><input type="radio" name="field" value="one" onclick='check_value(1)'>Mohave</td><td rowspan='15'><div id='imagedest'></td></tr>
+    <tr><td><input type="radio" name="field" value="one" onclick='check_value(1)'>Mohave</td><td rowspan='15'><div id='imagedest'></div></td></tr>
     <tr><td><input type="radio" name="field" value="two" onclick='check_value(2)'>Coconino</td></tr>
     <tr><td><input type="radio" name="field" value="three" onclick='check_value(3)'>Navajo</td></tr>
     <tr><td><input type="radio" name="field" value="four" onclick='check_value(4)'>Apache</td></tr>
