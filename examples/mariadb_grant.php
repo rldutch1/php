@@ -37,7 +37,7 @@ return $randomString;<br />
 }<br />
 //$ThePassword = generateRandomString(64); //Pass the number of random characters to generate.<br />
 //echo $ThePassword . &quot;\r\n&quot;;<br />
-echo &quot;See notes.robholland.net for more grant information.&lt;br /&gt;&lt;br &gt;&quot;;<br />
+echo &quot;See notes.robholland.net for more create user and grant information.&lt;br /&gt;&lt;br &gt;&quot;;<br />
 <br />
 function myfunction($value,$key)<br />
 {<br />
