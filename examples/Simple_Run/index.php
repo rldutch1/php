@@ -25,7 +25,7 @@ Rob's Page
     $files_n = count($files);
    
     $i=2; //Starting at 2 to remove "." and ".." directories.
-    while($i<=$files_n){
+    while($i<=$files_n-1){
         // "is_dir" only works from top directory, so append the $dir before the file
         if (is_dir($dir.'/'.$files[$i])){  
             $MyFileType[$i] = '<tr><td>D: <a href="./' .$files[$i] . '" target="_blank">' . $files[$i] . '/</a></td></tr>'  ; // D for Directory
