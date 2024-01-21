@@ -23,11 +23,11 @@ Rob's Page
     $dir    = './'; // path from top
     $files = scandir($dir);
     $files_n = count($files);
-   
+
     $i=2; //Starting at 2 to remove "." and ".." directories.
-    while($i<=$files_n){
-        // "is_dir" only works from top directory, so append the $dir before the file
-        if (is_dir($dir.'/'.$files[$i])){  
+    while($i<=$files_n-1){
+        // "is_dir" only works from top directory, so prepend the $dir before the file
+        if (is_dir($dir.'/'.$files[$i])){
             $MyFileType[$i] = '<tr><td>D: <a href="./' .$files[$i] . '" target="_blank">' . $files[$i] . '/</a></td></tr>'  ; // D for Directory
             //'. <a href="https://gemini.lan/~rob/' .$files[$i] . '" target="_blank">' . $files[$i] . '</a>'
         } else{
@@ -39,7 +39,7 @@ Rob's Page
         if(!is_null($MyFileType[$i]) && $MyFileType[$i]  !== ''){
         	echo $MyFileType[$i].''; //If not empty, display it.
         };
-        
+
         $i++;
     }
 
@@ -48,7 +48,7 @@ Rob's Page
 </body>
 </html>
 
-<?php 
+<?php
 //$d = opendir("./");
 //while(false !== ($f = readdir($d))) {
 //    echo "<br />";
