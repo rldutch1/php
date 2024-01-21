@@ -9,6 +9,7 @@ echo "
 <br />
 class Connection<br />
 {<br />
+//Sometimes the host can cause (Fatal error: Uncaught Error: Call to a member function prepare) if you are using a DNS name for the host. Try using a loopback 127.0.0.1 address if you are experiencing issues.<br />
     private \$host = \"TheServerName\";<br />
     private \$dbName = \"TheDatabaseName\";<br />
     private \$user = \"TheUserName\";<br />
@@ -26,6 +27,8 @@ class Connection<br />
         \$options = array(<br />
             PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,<br />
             PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,<br />
+            //PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_BOTH,<br />
+            //PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_NUM,<br />
             PDO::ATTR_EMULATE_PREPARES => false<br />
         );<br />
 <br />
@@ -34,8 +37,10 @@ class Connection<br />
             \$this->dbh = new PDO(\$dsn, \$this->user, \$this->pass, \$options);<br />
         }<br />
         //catch any errors<br />
+        //There is a cool looking function called MakePrettyException on this webpage https://www.php.net/manual/en/exception.gettrace.php
         catch (PDOException \$e) {<br />
             \$this->error = \$e->getMessage();<br />
+            //\$this-&gt;error = var_dump(\$e-&gt;getTrace());<br />
         }<br />
 <br />
     }<br />
