@@ -78,7 +78,7 @@ echo "
 			<td><input type='radio' name='edit' id='" . $id_column . "'></td>
 			</tr>";
 			}
-echo "</tbody></table>";
+echo "</tbody></table>
 <!-- <div class='tooltip'>Hover over me
   <span class='tooltiptext'>Tooltip text</span> </div> --> "; 
 ?>
