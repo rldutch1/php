@@ -37,7 +37,7 @@ class Connection<br />
             \$this->dbh = new PDO(\$dsn, \$this->user, \$this->pass, \$options);<br />
         }<br />
         //catch any errors<br />
-        //There is a cool looking function called MakePrettyException on this webpage https://www.php.net/manual/en/exception.gettrace.php
+        //There is a cool looking function called MakePrettyException on this webpage https://www.php.net/manual/en/exception.gettrace.php<br />
         catch (PDOException \$e) {<br />
             \$this->error = \$e->getMessage();<br />
             //\$this-&gt;error = var_dump(\$e-&gt;getTrace());<br />
