@@ -29,17 +29,11 @@ The array() function is used to create an array.<br />
 Example:<br />
 <br />
 &lt;?php<br />
-<br />
 $fruits = array(&quot;apple&quot;, &quot;banana&quot;, &quot;cherry&quot;);<br />
-<br />
 echo &quot;Fruits: &quot;;<br />
-<br />
 foreach ($fruits as $fruit) {<br />
-<br />
 echo $fruit . &quot; &quot;;<br />
-<br />
 }<br />
-<br />
 ?&gt;<br />
 <br />
 Output:<br />
@@ -52,21 +46,13 @@ The array_combine() function creates a new array by combining two arrays where o
 Example:<br />
 <br />
 &lt;?php<br />
-<br />
 $keys = array(&quot;a&quot;, &quot;b&quot;, &quot;c&quot;);<br />
-<br />
 $values = array(1, 2, 3);<br />
-<br />
 $combined = array_combine($keys, $values);<br />
-<br />
 echo &quot;Combined Array: &quot;;<br />
-<br />
 foreach ($combined as $key =&gt; $value) {<br />
-<br />
 echo &quot;[$key =&gt; $value] &quot;;<br />
-<br />
 }<br />
-<br />
 ?&gt;<br />
 <br />
 Output:<br />
@@ -79,19 +65,12 @@ array_chunk() splits an array into bits of a specified size and returns a multi-
 Example:<br />
 <br />
 &lt;?php<br />
-<br />
 $numbers = array(1, 2, 3, 4, 5, 6, 7, 8);<br />
-<br />
 $chunks = array_chunk($numbers, 3);<br />
-<br />
 echo &quot;Chunks of Array: &quot;;<br />
-<br />
 foreach ($chunks as $chunk) {<br />
-<br />
 echo &quot;[&quot; . implode(&quot;, &quot;, $chunk) . &quot;] &quot;;<br />
-<br />
 }<br />
-<br />
 ?&gt;<br />
 <br />
 Output:<br />
@@ -104,21 +83,13 @@ The compact() function creates an array by using variables as keys and their val
 Example:<br />
 <br />
 &lt;?php<br />
-<br />
 $name = &quot;John&quot;;<br />
-<br />
 $age = 30;<br />
-<br />
 $info = compact(&quot;name&quot;, &quot;age&quot;);<br />
-<br />
 echo &quot;Info Array: &quot;;<br />
-<br />
 foreach ($info as $key =&gt; $value) {<br />
-<br />
 echo &quot;[$key =&gt; $value] &quot;;<br />
-<br />
 }<br />
-<br />
 ?&gt;<br />
 <br />
 Output:<br />
@@ -131,17 +102,11 @@ range() generates an array containing a start and an end value, with optional st
 Example:<br />
 <br />
 &lt;?php<br />
-<br />
 $even_numbers = range(2, 10, 2);;<br />
-<br />
 echo &quot;Even Numbers: &quot;;<br />
-<br />
 foreach ($even_numbers as $number) {<br />
-<br />
 echo $number . &quot; &quot;;<br />
-<br />
 }<br />
-<br />
 ?&gt;<br />
 <br />
 Output:<br />
@@ -154,19 +119,12 @@ The list() function is used to assign values to a list of variables from an arra
 Example:<br />
 <br />
 &lt;?php<br />
-<br />
 $info = array(&quot;John&quot;, &quot;Doe&quot;, 30);<br />
-<br />
 list($first_name, $last_name, $age) = $info;<br />
-<br />
 echo &quot;First Name: &quot; . $first_name . &quot;; &quot;;<br />
-<br />
 echo &quot;Last Name: &quot; . $last_name . &quot;; &quot;;<br />
-<br />
 echo &quot;Age: &quot; . $age . &quot;; &quot;;<br />
-<br />
 ?&gt;<br />
-<br />
 Output:<br />
 <br />
 First Name: John Last Name: Doe Age: 30<br />
@@ -177,17 +135,11 @@ array_fill() creates an array with a specified number of elements, each having t
 Example:<br />
 <br />
 &lt;?php<br />
-<br />
 $filledArray = array_fill(0, 3, &quot;hello&quot;);<br />
-<br />
 echo &quot;Filled Array: &quot;;<br />
-<br />
 foreach ($filledArray as $item) {<br />
-<br />
 echo $item . &quot; &quot;;<br />
-<br />
 }<br />
-<br />
 ?&gt;<br />
 <br />
 Output:<br />
@@ -200,19 +152,12 @@ array_fill_keys() creates an array using specified keys and the same value for e
 Example:<br />
 <br />
 &lt;?php<br />
-<br />
 $keys = array(&quot;a&quot;, &quot;b&quot;, &quot;c&quot;);<br />
-<br />
 $filledArray = array_fill_keys($keys, &quot;hello&quot;);<br />
-<br />
 echo &quot;Filled Array with Keys: &quot;;<br />
-<br />
 foreach ($filledArray as $key =&gt; $value) {<br />
-<br />
 echo &quot;[$key =&gt; $value] &quot;;<br />
-<br />
 }<br />
-<br />
 ?&gt;<br />
 <br />
 Output:<br />
@@ -225,19 +170,12 @@ array_flip() flips the keys and values of an array, creating a new array where t
 Example:<br />
 <br />
 &lt;?php<br />
-<br />
 $fruits = array(&quot;apple&quot;, &quot;banana&quot;, &quot;cherry&quot;);<br />
-<br />
 $flipped = array_flip($fruits);<br />
-<br />
 echo &quot;Flipped Array: &quot;;<br />
-<br />
 foreach ($flipped as $key =&gt; $value) {<br />
-<br />
 echo &quot;[$key =&gt; $value] &quot;;<br />
-<br />
 }<br />
-<br />
 ?&gt;<br />
 <br />
 Output:<br />
@@ -250,19 +188,12 @@ array_slice() extracts a portion of an array based on a starting index and lengt
 Example:<br />
 <br />
 &lt;?php<br />
-<br />
 $fruits = array(&quot;apple&quot;, &quot;banana&quot;, &quot;cherry&quot;, &quot;date&quot;, &quot;fig&quot;);<br />
-<br />
 $slice = array_slice($fruits, 1, 3);<br />
-<br />
 echo &quot;Sliced Array: &quot;;<br />
-<br />
 foreach ($slice as $item) {<br />
-<br />
 echo $item . &quot; &quot;;<br />
-<br />
 }<br />
-<br />
 ?&gt;<br />
 <br />
 Output:<br />
@@ -276,21 +207,13 @@ array_diff() calculates the difference between two or more arrays and returns an
 Example:<br />
 <br />
 &lt;?php<br />
-<br />
 $arr1 = array(&quot;a&quot;, &quot;b&quot;, &quot;c&quot;);<br />
-<br />
 $arr2 = array(&quot;b&quot;, &quot;c&quot;, &quot;d&quot;);<br />
-<br />
 $difference = array_diff($arr1, $arr2);<br />
-<br />
 echo &quot;Array Difference: &quot;;<br />
-<br />
 foreach ($difference as $item) {<br />
-<br />
 echo $item . &quot; &quot;;<br />
-<br />
 }<br />
-<br />
 ?&gt;<br />
 <br />
 Output:<br />
@@ -303,21 +226,13 @@ array_diff_key() computes the difference of arrays using keys for comparison and
 Example:<br />
 <br />
 &lt;?php<br />
-<br />
 $arr1 = array(&quot;a&quot; =&gt; 1, &quot;b&quot; =&gt; 2, &quot;c&quot; =&gt; 3);<br />
-<br />
 $arr2 = array(&quot;b&quot; =&gt; 2, &quot;c&quot; =&gt; 4, &quot;d&quot; =&gt; 5);<br />
-<br />
 $difference = array_diff_key($arr1, $arr2);<br />
-<br />
 echo &quot;Array Difference by Key: &quot;;<br />
-<br />
 foreach ($difference as $key =&gt; $value) {<br />
-<br />
 echo &quot;[$key =&gt; $value] &quot;;<br />
-<br />
 }<br />
-<br />
 ?&gt;<br />
 <br />
 Output:<br />
@@ -330,21 +245,13 @@ array_diff_assoc() computes the difference of arrays with an additional index ch
 Example:<br />
 <br />
 &lt;?php<br />
-<br />
 $arr1 = array(&quot;a&quot; =&gt; 1, &quot;b&quot; =&gt; 2, &quot;c&quot; =&gt; 3);<br />
-<br />
 $arr2 = array(&quot;b&quot; =&gt; 2, &quot;c&quot; =&gt; 4, &quot;d&quot; =&gt; 5);<br />
-<br />
 $difference = array_diff_assoc($arr1, $arr2);<br />
-<br />
 echo &quot;Array Difference (assoc): &quot;;<br />
-<br />
 foreach ($difference as $key =&gt; $value) {<br />
-<br />
 echo &quot;[$key =&gt; $value] &quot;;<br />
-<br />
 }<br />
-<br />
 ?&gt;<br />
 <br />
 Output:<br />
@@ -357,21 +264,13 @@ The array_intersect() function calculates the intersection of two or more arrays
 Example:<br />
 <br />
 &lt;?php<br />
-<br />
 $arr1 = array(&quot;a&quot;, &quot;b&quot;, &quot;c&quot;);<br />
-<br />
 $arr2 = array(&quot;b&quot;, &quot;c&quot;, &quot;d&quot;);<br />
-<br />
 $intersection = array_intersect($arr1, $arr2);<br />
-<br />
 echo &quot;Array Intersection: &quot;;<br />
-<br />
 foreach ($intersection as $item) {<br />
-<br />
 echo $item . &quot; &quot;;<br />
-<br />
 }<br />
-<br />
 ?&gt;<br />
 <br />
 Output:<br />
@@ -384,21 +283,13 @@ array_intersect_assoc() computes the intersection of arrays with an additional i
 Example:<br />
 <br />
 &lt;?php<br />
-<br />
 $arr1 = array(&quot;a&quot; =&gt; 1, &quot;b&quot; =&gt; 2, &quot;c&quot; =&gt; 3);<br />
-<br />
 $arr2 = array(&quot;b&quot; =&gt; 2, &quot;c&quot; =&gt; 4, &quot;d&quot; =&gt; 5);<br />
-<br />
 $intersection = array_intersect_assoc($arr1, $arr2);<br />
-<br />
 echo &quot;Array Intersection (assoc): &quot;;<br />
-<br />
 foreach ($intersection as $key =&gt; $value) {<br />
-<br />
 echo &quot;[$key =&gt; $value] &quot;;<br />
-<br />
 }<br />
-<br />
 ?&gt;<br />
 <br />
 Output:<br />
@@ -411,21 +302,13 @@ array_intersect_key() computes the intersection of arrays using keys for compari
 Example:<br />
 <br />
 &lt;?php<br />
-<br />
 $arr1 = array(&quot;a&quot; =&gt; 1, &quot;b&quot; =&gt; 2, &quot;c&quot; =&gt; 3);<br />
-<br />
 $arr2 = array(&quot;b&quot; =&gt; 2, &quot;c&quot; =&gt; 4, &quot;d&quot; =&gt; 5);<br />
-<br />
 $intersection = array_intersect_key($arr1, $arr2);<br />
-<br />
 echo &quot;Array Intersection by Key: &quot;;<br />
-<br />
 foreach ($intersection as $key =&gt; $value) {<br />
-<br />
 echo &quot;[$key =&gt; $value] &quot;;<br />
-<br />
 }<br />
-<br />
 ?&gt;<br />
 <br />
 Output:<br />
@@ -438,15 +321,10 @@ array_key_exists() checks if a specified key exists and returns true if the key 
 Example:<br />
 <br />
 &lt;?php<br />
-<br />
 $person = array(&quot;name&quot; =&gt; &quot;John&quot;, &quot;age&quot; =&gt; 30, &quot;country&quot; =&gt; &quot;USA&quot;);<br />
-<br />
 $exists = array_key_exists(&quot;age&quot;, $person);<br />
-<br />
 echo &quot;Key &#039;age&#039; Exists: &quot; . ($exists ? &quot;Yes&quot; : &quot;No&quot;);<br />
-<br />
 ?&gt;<br />
-<br />
 Output:<br />
 <br />
 Key &#039;age&#039; Exists: Yes<br />
@@ -457,13 +335,9 @@ The in_array() function checks if a specified value exists in an array. It retur
 Example:<br />
 <br />
 &lt;?php<br />
-<br />
 $fruits = array(&quot;apple&quot;, &quot;banana&quot;, &quot;cherry&quot;);<br />
-<br />
 $result = in_array(&quot;banana&quot;, $fruits);<br />
-<br />
 echo &quot;Value &#039;banana&#039; Exists: &quot; . ($result ? &quot;Yes&quot; : &quot;No&quot;);<br />
-<br />
 ?&gt;<br />
 <br />
 Output:<br />
@@ -476,13 +350,9 @@ array_search() looks for a value in an array and returns the corresponding key i
 Example:<br />
 <br />
 &lt;?php<br />
-<br />
 $fruits = array(&quot;apple&quot;, &quot;banana&quot;, &quot;cherry&quot;);<br />
-<br />
 $key = array_search(&quot;banana&quot;, $fruits);<br />
-<br />
 echo &quot;Key for &#039;banana&#039;: &quot; . $key;<br />
-<br />
 ?&gt;<br />
 <br />
 Output:<br />
@@ -495,19 +365,12 @@ The array_count_values() function counts the frequency of values in an array and
 Example:<br />
 <br />
 &lt;?php<br />
-<br />
 $numbers = array(1, 2, 2, 3, 3, 3);<br />
-<br />
 $counted = array_count_values($numbers);<br />
-<br />
 echo &quot;Counted Values: &quot;;<br />
-<br />
 foreach ($counted as $value =&gt; $count) {<br />
-<br />
 echo &quot;$value: $count, &quot;;<br />
-<br />
 }<br />
-<br />
 ?&gt;<br />
 <br />
 Output:<br />
@@ -521,21 +384,13 @@ The array_merge() function merges two or more arrays into a single array.<br />
 Example:<br />
 <br />
 &lt;?php<br />
-<br />
 $arr1 = array(&quot;a&quot;, &quot;b&quot;);<br />
-<br />
 $arr2 = array(&quot;c&quot;, &quot;d&quot;);<br />
-<br />
 $merged = array_merge($arr1, $arr2);<br />
-<br />
 echo &quot;Merged Array: &quot;;<br />
-<br />
 foreach ($merged as $item) {<br />
-<br />
 echo $item . &quot; &quot;;<br />
-<br />
 }<br />
-<br />
 ?&gt;<br />
 <br />
 Output:<br />
@@ -548,21 +403,13 @@ array_merge_recursive() is used to merge multidimensional arrays.<br />
 Example:<br />
 <br />
 &lt;?php<br />
-<br />
 $arr1 = array(&quot;a&quot; =&gt; &quot;apple&quot;, &quot;b&quot; =&gt; &quot;banana&quot;);<br />
-<br />
 $arr2 = array(&quot;b&quot; =&gt; &quot;blueberry&quot;, &quot;c&quot; =&gt; &quot;cherry&quot;);<br />
-<br />
 $merged = array_merge_recursive($arr1, $arr2);<br />
-<br />
 echo &quot;Merged Array (Recursive): &quot;;<br />
-<br />
 foreach ($merged as $key =&gt; $value) {<br />
-<br />
 echo &quot;[$key =&gt; $value] &quot;;<br />
-<br />
 }<br />
-<br />
 ?&gt;<br />
 Output:<br />
 <br />
@@ -574,21 +421,13 @@ array_replace() replaces the values of the first array with the values from the 
 Example:<br />
 <br />
 &lt;?php<br />
-<br />
 $arr1 = array(&quot;a&quot; =&gt; &quot;apple&quot;, &quot;b&quot; =&gt; &quot;banana&quot;);<br />
-<br />
 $arr2 = array(&quot;b&quot; =&gt; &quot;blueberry&quot;, &quot;c&quot; =&gt; &quot;cherry&quot;);<br />
-<br />
 $replaced = array_replace($arr1, $arr2);<br />
-<br />
 echo &quot;Replaced Array: &quot;;<br />
-<br />
 foreach ($replaced as $key =&gt; $value) {<br />
-<br />
 echo &quot;[$key =&gt; $value] &quot;;<br />
-<br />
 }<br />
-<br />
 ?&gt;<br />
 <br />
 Output:<br />
@@ -601,18 +440,11 @@ array_push() adds one or more elements to the end of an array.<br />
 Example:<br />
 <br />
 &lt;?php<br />
-<br />
 $fruits = array(&quot;apple&quot;, &quot;banana&quot;);<br />
-<br />
 array_push($fruits, &quot;cherry&quot;, &quot;date&quot;);<br />
-<br />
 echo &quot;Updated Array: &quot;;<br />
-<br />
 foreach ($fruits as $fruit) {<br />
-<br />
 echo $fruit . &quot; &quot;;<br />
-}<br />
-<br />
 ?&gt;<br />
 <br />
 Output:<br />
@@ -625,13 +457,9 @@ array_reduce() reduces an array to a single value using a callback function.<br 
 Example:<br />
 <br />
 &lt;?php<br />
-<br />
 $numbers = array(1, 2, 3, 4, 5);<br />
-<br />
 $sum = array_reduce($numbers, function ($carry, $item) {<br />
-<br />
 return $carry + $item;<br />
-<br />
 });<br />
 <br />
 echo &quot;Sum of Numbers: &quot; . $sum;<br />
@@ -648,13 +476,9 @@ The array_pop() function removes and returns the last element from an array.<br 
 Example:<br />
 <br />
 &lt;?php<br />
-<br />
 $fruits = array(&quot;apple&quot;, &quot;banana&quot;, &quot;cherry&quot;);<br />
-<br />
 $lastFruit = array_pop($fruits);<br />
-<br />
 echo &quot;Last Fruit Removed: &quot; . $lastFruit;<br />
-<br />
 ?&gt;<br />
 <br />
 Output:<br />
@@ -667,13 +491,9 @@ The array_shift() function removes and returns the first element from an array.<
 Example:<br />
 <br />
 &lt;?php<br />
-<br />
 $fruits = array(&quot;apple&quot;, &quot;banana&quot;, &quot;cherry&quot;);<br />
-<br />
 $firstFruit = array_shift($fruits);<br />
-<br />
 echo &quot;First Fruit Removed: &quot; . $firstFruit;<br />
-<br />
 ?&gt;<br />
 <br />
 Output:<br />
@@ -686,19 +506,12 @@ array_unshift() adds one or more elements to the beginning of an array.<br />
 Example:<br />
 <br />
 &lt;?php<br />
-<br />
 $fruits = array(&quot;banana&quot;, &quot;cherry&quot;);<br />
-<br />
 array_unshift($fruits, &quot;apple&quot;, &quot;date&quot;);<br />
-<br />
 echo &quot;Updated Array: &quot;;<br />
-<br />
 foreach ($fruits as $fruit) {<br />
-<br />
 echo $fruit . &quot; &quot;;<br />
-<br />
 }<br />
-<br />
 ?&gt;<br />
 <br />
 Output:<br />
@@ -711,17 +524,11 @@ arsort() sorts an associative array in descending order, preserving key-value as
 Example:<br />
 <br />
 &lt;?php<br />
-<br />
 $fruits = array(&quot;banana&quot; =&gt; 2, &quot;cherry&quot; =&gt; 1, &quot;apple&quot; =&gt; 3); arsort($fruits);<br />
-<br />
 echo &quot;Sorted Array (Reverse): &quot;;<br />
-<br />
 foreach ($fruits as $key =&gt; $value) {<br />
-<br />
 echo &quot;[$key =&gt; $value] &quot;;<br />
-<br />
 }<br />
-<br />
 ?&gt;<br />
 <br />
 Output:<br />
@@ -734,17 +541,11 @@ asort() sorts an associative array in ascending order.<br />
 Example:<br />
 <br />
 &lt;?php<br />
-<br />
 $fruits = array(&quot;banana&quot; =&gt; 2, &quot;cherry&quot; =&gt; 1, &quot;apple&quot; =&gt; 3); asort($fruits);;<br />
-<br />
 echo &quot;Sorted Array: &quot;;<br />
-<br />
 foreach ($fruits as $key =&gt; $value) {<br />
-<br />
 echo &quot;[$key =&gt; $value] &quot;;<br />
-<br />
 }<br />
-<br />
 ?&gt;<br />
 <br />
 Output:<br />
@@ -757,19 +558,12 @@ rsort() sorts an indexed array in descending order.<br />
 Example:<br />
 <br />
 &lt;?php<br />
-<br />
 $numbers = array(5, 3, 1, 4, 2);<br />
-<br />
 rsort($numbers);<br />
-<br />
 echo &quot;Reverse Sorted Numbers: &quot;;<br />
-<br />
 foreach ($numbers as $number) {<br />
-<br />
 echo $number . &quot; &quot;;<br />
-<br />
 }<br />
-<br />
 ?&gt;<br />
 <br />
 Output:<br />
@@ -782,23 +576,14 @@ usort() sorts an indexed array using a user-defined comparison function.<br />
 Example:<br />
 <br />
 &lt;?php<br />
-<br />
 $numbers = array(5, 3, 1, 4, 2);<br />
-<br />
 usort($numbers, function($a, $b) {<br />
-<br />
 return $a - $b;<br />
-<br />
 });<br />
-<br />
 echo &quot;Sorted Numbers (User-Defined): &quot;;<br />
-<br />
 foreach ($numbers as $number) {<br />
-<br />
 echo $number . &quot; &quot;;<br />
-<br />
 }<br />
-<br />
 ?&gt;<br />
 <br />
 Output:<br />
@@ -811,31 +596,18 @@ array_multisort() performs a multi-dimensional sorting of an array.<br />
 Example:<br />
 <br />
 &lt;?php<br />
-<br />
 $names = array(&quot;John&quot;, &quot;Alice&quot;, &quot;Bob&quot;);<br />
-<br />
 $ages = array(30, 25, 35);<br />
-<br />
 array_multisort($names, $ages);<br />
-<br />
 echo &quot;Sorted Names: &quot;;<br />
-<br />
 foreach ($names as $name) {<br />
-<br />
 echo $name . &quot; &quot;;<br />
-<br />
 }<br />
-<br />
 echo &quot;; &quot;;<br />
-<br />
 echo &quot;Sorted Ages: &quot;;<br />
-<br />
 foreach ($ages as $age) {<br />
-<br />
 echo $age . &quot; &quot;;<br />
-<br />
 }<br />
-<br />
 ?&gt;<br />
 <br />
 Output:<br />
@@ -848,19 +620,12 @@ shuffle() randomly shuffles the elements of an array.<br />
 Example:<br />
 <br />
 &lt;?php<br />
-<br />
 $cards = array(&quot;A&quot;, &quot;2&quot;, &quot;3&quot;, &quot;4&quot;, &quot;5&quot;);<br />
-<br />
 shuffle($cards);<br />
-<br />
 echo &quot;Shuffled Cards: &quot;;<br />
-<br />
 foreach ($cards as $card) {<br />
-<br />
 echo $card . &quot; &quot;;<br />
-<br />
 }<br />
-<br />
 ?&gt;<br />
 <br />
 Output:<br />
@@ -873,19 +638,12 @@ This function sorts an array using a &quot;natural order&quot; algorithm, which 
 Example:<br />
 <br />
 &lt;?php<br />
-<br />
 $fruits = array(&quot;apple10&quot;, &quot;apple2&quot;, &quot;apple1&quot;);<br />
-<br />
 natsort($fruits);<br />
-<br />
 echo &quot;Naturally Sorted Fruits: &quot;;<br />
-<br />
 foreach ($fruits as $fruit) {<br />
-<br />
 echo $fruit . &quot; &quot;;<br />
-<br />
 }<br />
-<br />
 ?&gt;<br />
 <br />
 Output:<br />
@@ -898,23 +656,14 @@ array_filter() filters the elements of an array using a callback function and re
 Example:<br />
 <br />
 &lt;?php<br />
-<br />
 $numbers = array(1, 2, 3, 4, 5);<br />
-<br />
 $filtered = array_filter($numbers, function($n) {<br />
-<br />
 return $n % 2 == 0; // Filter even numbers.<br />
-<br />
 });<br />
-<br />
 echo &quot;Filtered Numbers (Even): &quot;;<br />
-<br />
 foreach ($filtered as $number) {<br />
-<br />
 echo $number . &quot; &quot;;<br />
-<br />
 }<br />
-<br />
 ?&gt;<br />
 <br />
 Output:<br />
@@ -927,19 +676,12 @@ array_pad() pads an array to a specified length with a specified value.<br />
 Example:<br />
 <br />
 &lt;?php<br />
-<br />
 $numbers = array(1, 2, 3);<br />
-<br />
 $padded = array_pad($numbers, 5, 0);<br />
-<br />
 echo &quot;Padded Numbers: &quot;;<br />
-<br />
 foreach ($padded as $number) {<br />
-<br />
 echo $number . &quot; &quot;;<br />
-<br />
 }<br />
-<br />
 ?&gt;<br />
 <br />
 Output:<br />
@@ -952,23 +694,14 @@ array_map() applies a callback function to each element of an array and returns 
 Example:<br />
 <br />
 &lt;?php<br />
-<br />
 $numbers = array(1, 2, 3, 4, 5);<br />
-<br />
 $squared = array_map(function($n) {<br />
-<br />
 return $n * $n;<br />
-<br />
 }, $numbers);<br />
-<br />
 echo &quot;Squared Numbers: &quot;;<br />
-<br />
 foreach ($squared as $number) {<br />
-<br />
 echo $number . &quot; &quot;;<br />
-<br />
 }<br />
-<br />
 ?&gt;<br />
 <br />
 Output:<br />
@@ -981,19 +714,12 @@ This function changes the case of keys in an array to either lowercase or upperc
 Example:<br />
 <br />
 &lt;?php<br />
-<br />
 $fruits = array(&quot;apple&quot; =&gt; 2, &quot;Banana&quot; =&gt; 3, &quot;CHERRY&quot; =&gt; 1);<br />
-<br />
 $lowercaseKeys = array_change_key_case($fruits, CASE_LOWER);<br />
-<br />
 echo &quot;Array with Lowercase Keys: &quot;;<br />
-<br />
 foreach ($lowercaseKeys as $key =&gt; $value) {<br />
-<br />
 echo &quot;[$key =&gt; $value] &quot;;<br />
-<br />
 }<br />
-<br />
 ?&gt;<br />
 <br />
 Output:<br />
@@ -1006,19 +732,12 @@ The reverse array function reverses the order of elements in an array.<br />
 Example:<br />
 <br />
 &lt;?php<br />
-<br />
 $fruits = array(&quot;apple&quot;, &quot;banana&quot;, &quot;cherry&quot;);<br />
-<br />
 $reversed = array_reverse($fruits);<br />
-<br />
 echo &quot;Reversed Fruits: &quot;;<br />
-<br />
 foreach ($reversed as $fruit) {<br />
-<br />
 echo $fruit . &quot; &quot;;<br />
-<br />
 }<br />
-<br />
 ?&gt;<br />
 <br />
 Output:<br />
@@ -1031,29 +750,17 @@ array_splice() removes a portion of an array and replaces it with new elements. 
 Example:<br />
 <br />
 &lt;?php<br />
-<br />
 $fruits = array(&quot;apple&quot;, &quot;banana&quot;, &quot;cherry&quot;, &quot;date&quot;, &quot;fig&quot;);<br />
-<br />
 $removed = array_splice($fruits, 2, 2, array(&quot;grape&quot;, &quot;kiwi&quot;));<br />
-<br />
 echo &quot;Updated Fruits: &quot;;<br />
-<br />
 foreach ($fruits as $fruit) {<br />
-<br />
 echo $fruit . &quot; &quot;;<br />
-<br />
 }<br />
-<br />
 echo &quot;; &quot;;<br />
-<br />
 echo &quot;Removed Fruits: &quot;;<br />
-<br />
 foreach ($removed as $fruit) {<br />
-<br />
 echo $fruit . &quot; &quot;;<br />
-<br />
 }<br />
-<br />
 ?&gt;<br />
 <br />
 Output:<br />
@@ -1066,19 +773,12 @@ array_unique() removes duplicate values from an array and returns a new array wi
 Example:<br />
 <br />
 &lt;?php<br />
-<br />
 $numbers = array(1, 2, 3, 2, 4, 5, 5);<br />
-<br />
 $uniqueNumbers = array_unique($numbers);;<br />
-<br />
 echo &quot;Unique Numbers: &quot;;<br />
-<br />
 foreach ($uniqueNumbers as $number) {<br />
-<br />
 echo $number . &quot; &quot;;<br />
-<br />
 }<br />
-<br />
 ?&gt;<br />
 <br />
 Output:<br />
@@ -1091,23 +791,14 @@ array_walk() applies a user-defined callback function to each element of an arra
 Example:<br />
 <br />
 &lt;?php<br />
-<br />
 $fruits = array(&quot;apple&quot;, &quot;banana&quot;, &quot;cherry&quot;);<br />
-<br />
 array_walk($fruits, function(&amp;$value) {<br />
-<br />
 $value = strtoupper($value);<br />
-<br />
 });<br />
-<br />
 echo &quot;Modified Fruits: &quot;;<br />
-<br />
 foreach ($fruits as $fruit) {<br />
-<br />
 echo $fruit . &quot; &quot;;<br />
-<br />
 }<br />
-<br />
 ?&gt;<br />
 <br />
 Output:<br />
@@ -1121,19 +812,12 @@ array_keys() returns all the keys or a subset of keys from an associative array.
 Example:<br />
 <br />
 &lt;?php<br />
-<br />
 $fruits = array(&quot;apple&quot; =&gt; 2, &quot;banana&quot; =&gt; 3, &quot;cherry&quot; =&gt; 1);<br />
-<br />
 $keys = array_keys($fruits);<br />
-<br />
 echo &quot;Array Keys: &quot;;<br />
-<br />
 foreach ($keys as $key) {<br />
-<br />
 echo $key . &quot; &quot;;<br />
-<br />
 }<br />
-<br />
 ?&gt;<br />
 <br />
 Output:<br />
@@ -1146,27 +830,16 @@ array_column() extracts the values from a single column of a multi-dimensional a
 Example:<br />
 <br />
 &lt;?php<br />
-<br />
 $people = array(<br />
-<br />
 array(&quot;name&quot; =&gt; &quot;John&quot;, &quot;age&quot; =&gt; 30),<br />
-<br />
 array(&quot;name&quot; =&gt; &quot;Alice&quot;, &quot;age&quot; =&gt; 25),<br />
-<br />
 array(&quot;name&quot; =&gt; &quot;Bob&quot;, &quot;age&quot; =&gt; 35)<br />
-<br />
 );<br />
-<br />
 $names = array_column($people, &quot;name&quot;);<br />
-<br />
 echo &quot;Names: &quot;;<br />
-<br />
 foreach ($names as $name) {<br />
-<br />
 echo $name . &quot; &quot;;<br />
-<br />
 }<br />
-<br />
 ?&gt;<br />
 <br />
 Output:<br />
@@ -1179,13 +852,9 @@ array_rand() returns one or more random keys from an array.<br />
 Example:<br />
 <br />
 &lt;?php<br />
-<br />
 $fruits = array(&quot;apple&quot;, &quot;banana&quot;, &quot;cherry&quot;, &quot;date&quot;, &quot;fig&quot;);<br />
-<br />
 $randomKey = array_rand($fruits);<br />
-<br />
 echo &quot;Random Key: &quot; . $randomKey;<br />
-<br />
 ?&gt;<br />
 <br />
 Output:<br />
@@ -1198,13 +867,9 @@ This function calculates the product of all the values in an array.<br />
 Example:<br />
 <br />
 &lt;?php<br />
-<br />
 $numbers = array(1, 2, 3, 4, 5);<br />
-<br />
 $product = array_product($numbers);<br />
-<br />
 echo &quot;Product of Numbers: &quot; . $product;<br />
-<br />
 ?&gt;<br />
 <br />
 Output:<br />
@@ -1217,13 +882,9 @@ array_sum() calculates the sum of all the values in an array.<br />
 Example:<br />
 <br />
 &lt;?php<br />
-<br />
 $numbers = array(1, 2, 3, 4, 5);<br />
-<br />
 $sum = array_sum($numbers);<br />
-<br />
 echo &quot;Sum of Numbers: &quot; . $sum;<br />
-<br />
 ?&gt;<br />
 <br />
 Output:<br />
@@ -1236,13 +897,9 @@ count() returns the number of elements in an array.<br />
 Example:<br />
 <br />
 &lt;?php<br />
-<br />
 $fruits = array(&quot;apple&quot;, &quot;banana&quot;, &quot;cherry&quot;);<br />
-<br />
 $count = count($fruits);<br />
-<br />
 echo &quot;Number of Fruits: &quot; . $count;<br />
-<br />
 ?&gt;<br />
 <br />
 Output:<br />
@@ -1255,13 +912,9 @@ current() returns the current element&#039;s value in an array.<br />
 Example:<br />
 <br />
 &lt;?php<br />
-<br />
 $fruits = array(&quot;apple&quot;, &quot;banana&quot;, &quot;cherry&quot;);<br />
-<br />
 $current = current($fruits);<br />
-<br />
 echo &quot;Current Fruit: &quot; . $current;<br />
-<br />
 ?&gt;<br />
 <br />
 Output:<br />
@@ -1274,13 +927,9 @@ key() returns the current element&#039;s key in an array.<br />
 Example:<br />
 <br />
 &lt;?php<br />
-<br />
 $fruits = array(&quot;apple&quot;, &quot;banana&quot;, &quot;cherry&quot;);<br />
-<br />
 $key = key($fruits);<br />
-<br />
 echo &quot;Current Key: &quot; . $key;<br />
-<br />
 ?&gt;<br />
 <br />
 Output:<br />
@@ -1293,13 +942,9 @@ The extract function imports variables into the current symbol table from an ass
 Example:<br />
 <br />
 &lt;?php<br />
-<br />
 $person = array(&quot;name&quot; =&gt; &quot;John&quot;, &quot;age&quot; =&gt; 30);<br />
-<br />
 extract($person);<br />
-<br />
 echo &quot;Name: &quot; . $name . &quot;, Age: &quot; . $age;<br />
-<br />
 ?&gt;<br />
 <br />
 Output:<br />
@@ -1312,13 +957,9 @@ This function advances the internal pointer of an array to the next element and 
 Example:<br />
 <br />
 &lt;?php<br />
-<br />
 $fruits = array(&quot;apple&quot;, &quot;banana&quot;, &quot;cherry&quot;);<br />
-<br />
 $nextFruit = next($fruits);<br />
-<br />
 echo &quot;Next Fruit: &quot; . $nextFruit;<br />
-<br />
 ?&gt;<br />
 <br />
 Output:<br />
@@ -1331,15 +972,10 @@ prev() moves the internal pointer of an array to the previous element and return
 Example:<br />
 <br />
 &lt;?php<br />
-<br />
 $fruits = array(&quot;apple&quot;, &quot;banana&quot;, &quot;cherry&quot;);<br />
-<br />
 end($fruits);<br />
-<br />
 $prevFruit = prev($fruits);<br />
-<br />
 echo &quot;Previous Fruit: &quot; . $prevFruit;<br />
-<br />
 ?&gt;<br />
 <br />
 Output:<br />
@@ -1352,13 +988,9 @@ end() moves the internal pointer of an array to the last element and returns tha
 Example:<br />
 <br />
 &lt;?php<br />
-<br />
 $fruits = array(&quot;apple&quot;, &quot;banana&quot;, &quot;cherry&quot;);<br />
-<br />
  $lastFruit = end($fruits);<br />
-<br />
 echo &quot;Last Fruit: &quot; . $lastFruit;<br />
-<br />
 ?&gt;<br />
 <br />
 Output:<br />
@@ -1371,13 +1003,9 @@ reset() moves the internal pointer of an array to the first element and returns 
 Example:<br />
 <br />
 &lt;?php<br />
-<br />
 $fruits = array(&quot;apple&quot;, &quot;banana&quot;, &quot;cherry&quot;);<br />
-<br />
 $firstFruit = reset($fruits);<br />
-<br />
 echo &quot;First Fruit: &quot; . $firstFruit;<br />
-<br />
 ?&gt;<br />
 <br />
 Output:<br />
@@ -1390,13 +1018,9 @@ each() returns the current key-value pair from an array and advances the interna
 Example:<br />
 <br />
 &lt;?php<br />
-<br />
 $fruits = array(&quot;apple&quot;, &quot;banana&quot;, &quot;cherry&quot;);<br />
-<br />
 $pair = each($fruits);<br />
-<br />
 echo &quot;Key: &quot; . $pair[&#039;key&#039;] . &quot;, Value: &quot; . $pair[&#039;value&#039;];<br />
-<br />
 ?&gt;<br />
 <br />
 Output:<br />
@@ -1413,15 +1037,10 @@ file() reads an entire file into an array, with each line of the file as an elem
 Example:<br />
 <br />
 &lt;?php<br />
-<br />
 $lines = file(&quot;example.txt&quot;);<br />
-<br />
 foreach ($lines as $line) {<br />
-<br />
 echo $line . &quot;\n&quot;;<br />
-<br />
 }<br />
-<br />
 ?&gt;<br />
 <br />
 Output:<br />
@@ -1435,17 +1054,11 @@ This constant specifies ascending order.<br />
 Example:<br />
 <br />
 &lt;?php<br />
-<br />
 $numbers = array(5, 3, 1, 4, 2);<br />
-<br />
 sort($numbers, SORT_ASC);<br />
-<br />
 foreach ($numbers as $number) {<br />
-<br />
 echo $number . &quot; &quot;;<br />
-<br />
 }<br />
-<br />
 ?&gt;<br />
 <br />
 Output:<br />
@@ -1458,17 +1071,11 @@ This constant specifies descending order.<br />
 Example:<br />
 <br />
 &lt;?php<br />
-<br />
 $numbers = array(5, 3, 1, 4, 2);<br />
-<br />
 rsort($numbers, SORT_DESC);<br />
-<br />
 foreach ($numbers as $number) {<br />
-<br />
 echo $number . &quot; &quot;;<br />
-<br />
 }<br />
-<br />
 ?&gt;<br />
 <br />
 Output:<br />
@@ -1481,17 +1088,11 @@ This constant indicates that elements should be treated as numeric values when s
 Example:<br />
 <br />
 &lt;?php<br />
-<br />
 $values = array(&quot;10&quot;, &quot;2&quot;, &quot;25&quot;, &quot;7&quot;);<br />
-<br />
 sort($values, SORT_NUMERIC);<br />
-<br />
 foreach ($values as $value) {<br />
-<br />
 echo $value . &quot; &quot;;<br />
-<br />
 }<br />
-<br />
 ?&gt;<br />
 <br />
 Output:<br />
@@ -1504,17 +1105,11 @@ This constant indicates that elements should be compared in their original data 
 Example:<br />
 <br />
 &lt;?php<br />
-<br />
 $values = array(&quot;10&quot;, &quot;2&quot;, &quot;25&quot;, &quot;7&quot;);<br />
-<br />
 sort($values, SORT_REGULAR);<br />
-<br />
 foreach ($values as $value) {<br />
-<br />
 echo $value . &quot; &quot;;<br />
-<br />
 }<br />
-<br />
 ?&gt;<br />
 <br />
 Output:<br />
@@ -1527,17 +1122,11 @@ This constant specifies that keys should be converted to lowercase.<br />
 Example:<br />
 <br />
 &lt;?php<br />
-<br />
 $fruits = array(&quot;Apple&quot; =&gt; &quot;red&quot;, &quot;Banana&quot; =&gt; &quot;yellow&quot;);<br />
-<br />
 $lowercaseKeys = array_change_key_case($fruits, CASE_LOWER);<br />
-<br />
 foreach ($lowercaseKeys as $key =&gt; $value) {<br />
-<br />
 echo &quot;Key: &quot; . $key . &quot;, Value: &quot; . $value . &quot;\n&quot;;<br />
-<br />
 }<br />
-<br />
 ?&gt;<br />
 <br />
 Output:<br />
@@ -1552,17 +1141,11 @@ This constant specifies that keys should be converted to uppercase.<br />
 Example:<br />
 <br />
 &lt;?php<br />
-<br />
 $fruits = array(&quot;apple&quot; =&gt; &quot;red&quot;, &quot;banana&quot; =&gt; &quot;yellow&quot;);<br />
-<br />
 $uppercaseKeys = array_change_key_case($fruits, CASE_UPPER);<br />
-<br />
 foreach ($uppercaseKeys as $key =&gt; $value) {<br />
-<br />
 echo &quot;Key: &quot; . $key . &quot;, Value: &quot; . $value . &quot;\n&quot;;<br />
-<br />
 }<br />
-<br />
 ?&gt;<br />
 <br />
 Output:<br />
