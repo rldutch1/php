@@ -6,8 +6,8 @@ include('PhpseclibTestCase.php');
 
 //include('PhpseclibFunctionalTestCase.php');
 
-$ssh = new Net_SSH2('pcma1p.bdcm.bannerhealth.com');
-if (!$ssh->login('pharmftp', 'pharm$$ftp')) {
+$ssh = new Net_SSH2('someservername.com');
+if (!$ssh->login('thesshusername', 'thesshuserpassword')) {
     exit('Login Failed');
 }
 

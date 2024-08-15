@@ -5,8 +5,8 @@
 /*   include 'vendor/autoload.php'; */
 include('phpseclib/Net/SSH2.php');
 
-   $ssh = new SSH2('pcma1p.bdcm.bannerhealth.com');
-   if (!$ssh->login('pharmftp', 'pharm$$pass')) {
+   $ssh = new SSH2('someservername.com');
+   if (!$ssh->login('thesshusername', 'thesshuserpassword')) {
        exit('Login Failed');
    }
 
