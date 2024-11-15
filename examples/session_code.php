@@ -2,6 +2,12 @@
 
 if(!session_id()) session_start(); //If session has not been started, start it.
 
+if(!session_id()
+	  {
+	    session_start();
+		      }
+)
+
 // Logout button code:
 <button onclick=\"window.location='logout.php';\">Home</button>
 
