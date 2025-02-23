@@ -47,14 +47,14 @@ echo &quot;LOCAL: &lt;br /&gt;&amp;nbsp;&amp;nbsp;GRANT USAGE ON &#36;value.* TO
 REMOTE: &lt;br /&gt;&amp;nbsp;&amp;nbsp;GRANT USAGE ON &#36;value.* TO &#039;&#36;dbusername&#039;@&#039;%&#039; REQUIRE NONE WITH MAX_QUERIES_PER_HOUR 0 MAX_CONNECTIONS_PER_HOUR 0 MAX_UPDATES_PER_HOUR 0 MAX_USER_CONNECTIONS 0; GRANT ALL PRIVILEGES ON `&#36;value`.* TO &#039;&#36;dbusername&#039;@&#039;%&#039;; GRANT ALL PRIVILEGES ON `&#36;value\_%`.* TO &#039;&#36;dbusername&#039;@&#039;%&#039;; &lt;br /&gt;&lt;br /&gt;&quot;;<br />
 <br />
 //Remote DB User Example:<br />
-//GRANT USAGE ON TheDatabaseName.* TO &#039;machform&#039;@&#039;%&#039; REQUIRE NONE WITH MAX_QUERIES_PER_HOUR 0 MAX_CONNECTIONS_PER_HOUR 0 MAX_UPDATES_PER_HOUR 0 MAX_USER_CONNECTIONS 0;<br />
-//GRANT ALL PRIVILEGES ON `TheDatabaseName`.* TO &#039;machform&#039;@&#039;%&#039;;<br />
-//GRANT ALL PRIVILEGES ON `TheDatabaseName\_%`.* TO &#039;machform&#039;@&#039;%&#039;;<br />
+//GRANT USAGE ON TheDatabaseName.* TO &#039;TheDatabaseUserName&#039;@&#039;%&#039; REQUIRE NONE WITH MAX_QUERIES_PER_HOUR 0 MAX_CONNECTIONS_PER_HOUR 0 MAX_UPDATES_PER_HOUR 0 MAX_USER_CONNECTIONS 0;<br />
+//GRANT ALL PRIVILEGES ON `TheDatabaseName`.* TO &#039;TheDatabaseUserName&#039;@&#039;%&#039;;<br />
+//GRANT ALL PRIVILEGES ON `TheDatabaseName\_%`.* TO &#039;TheDatabaseUserName&#039;@&#039;%&#039;;<br />
 <br />
 //Local DB User Example:<br />
-//GRANT USAGE ON TheDatabaseName.* TO &#039;machform&#039;@&#039;localhost&#039; REQUIRE NONE WITH MAX_QUERIES_PER_HOUR 0 MAX_CONNECTIONS_PER_HOUR 0 MAX_UPDATES_PER_HOUR 0 MAX_USER_CONNECTIONS 0;<br />
-//GRANT ALL PRIVILEGES ON `TheDatabaseName`.* TO &#039;machform&#039;@&#039;localhost&#039;;<br />
-//GRANT ALL PRIVILEGES ON `TheDatabaseName\_%`.* TO &#039;machform&#039;@&#039;localhost&#039;;<br />
+//GRANT USAGE ON TheDatabaseName.* TO &#039;TheDatabaseUserName&#039;@&#039;localhost&#039; REQUIRE NONE WITH MAX_QUERIES_PER_HOUR 0 MAX_CONNECTIONS_PER_HOUR 0 MAX_UPDATES_PER_HOUR 0 MAX_USER_CONNECTIONS 0;<br />
+//GRANT ALL PRIVILEGES ON `TheDatabaseName`.* TO &#039;TheDatabaseUserName&#039;@&#039;localhost&#039;;<br />
+//GRANT ALL PRIVILEGES ON `TheDatabaseName\_%`.* TO &#039;TheDatabaseUserName&#039;@&#039;localhost&#039;;<br />
 }<br />
 <br />
 &#36;i=count(&#36;rows);<br />
