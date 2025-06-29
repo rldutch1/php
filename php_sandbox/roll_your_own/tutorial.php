@@ -20,7 +20,7 @@ $database->myQuery(
     "INSERT INTO mytable (FName, LName, Age, Gender) VALUES (:fname, :lname, :age, :gender)"
 );
 
-$database->bind(":fname", "Barky");
+$database->bind(":fname", "VeryLoudBarky3");
 $database->bind(":lname", "Holland");
 $database->bind(":age", "10");
 $database->bind(":gender", "Male");
@@ -28,12 +28,13 @@ $database->bind(":gender", "Male");
 //$database->execute();
 //
 //echo $database->lastInsertId();
-if($database->run()){
 
-echo "record inserted";
-$lastid = $database->lastInsertId(); //Getting the last inserted ID
-echo "Last ID = " . $lastid . "\r\n";
-}
+  if($database->run()){
+
+  echo "record inserted";
+  $lastid = $database->lastInsertId(); //Getting the last inserted ID
+  echo "Last ID = " . $lastid . "\r\n";
+  }
 
 //Insert multiple records using a Transaction
 //The next test we will try is to insert multiple records using a Transaction so that we don’t have to repeat the query.
@@ -47,21 +48,21 @@ $database->myQuery(
 );
 
 //Bind data for the 1st query.
-$database->bind(":fname", "Puppy");
+$database->bind(":fname", "BigPuppy3");
 $database->bind(":lname", "Holland");
 $database->bind(":age", "10");
 $database->bind(":gender", "Female");
 
 //Execute the 1st query.
-if($database->run()){
+  if($database->run()){
 
-echo "record inserted";
-$lastid = $database->lastInsertId(); //Getting the last inserted ID
-echo "Last ID = " . $lastid . "\r\n";
-}
+  echo "record inserted";
+  $lastid = $database->lastInsertId(); //Getting the last inserted ID
+  echo "Last ID = " . $lastid . "\r\n";
+  }
 
 //Bind data for the 2nd query.
-$database->bind(":fname", "Dorothy");
+$database->bind(":fname", "FamilyPet3");
 $database->bind(":lname", "Holland");
 $database->bind(":age", "10");
 $database->bind(":gender", "Female");
