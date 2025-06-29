@@ -1,6 +1,6 @@
 <?php
 //https://culttt.com/2012/10/01/roll-your-own-pdo-php-class/
-include "database.class.php";
+include "db.class.php";
 
 //// Define DB configuration in this local file to make connections more flexable to different DBs.
 //define("DB_HOST", "localhost");

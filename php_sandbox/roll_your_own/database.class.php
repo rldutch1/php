@@ -17,22 +17,32 @@ private $error;
 private $stmt;
 
 //connection
+//When a class has a construct method, it is automatically called on all newly-created objects. 
+//This enables you to set up any initialization you might need on the new object before it is used.
 public function __construct()
 {
 	//Set DSN:
 		$dsn = "mysql:host=" . $this->host . ";dbname=" . $this->dbName . ";charset=" . $this->charset;
 	//Set options:
-		$options = array(
+		$option0 = array( //Fetch assoc.
 		PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
 		PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
-		//PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_BOTH,
-		//PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_NUM,
+		PDO::ATTR_EMULATE_PREPARES => false
+	);
+		$option1 = array( //Fetch num.
+		PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+		PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_NUM,
+		PDO::ATTR_EMULATE_PREPARES => false
+	);
+		$option2 = array( //Fetch both.
+		PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+		PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_BOTH,
 		PDO::ATTR_EMULATE_PREPARES => false
 	);
 
 try {
 	// setup connection
-		$this->dbh = new PDO($dsn, $this->user, $this->pass, $options);
+		$this->dbh = new PDO($dsn, $this->user, $this->pass, $option0);
 	}
 catch (PDOException $e) {
 	//catch any errors
@@ -41,7 +51,6 @@ catch (PDOException $e) {
 		$this->error = $e->getMessage();
 		//$this->error = var_dump($e->getTrace());
 }
-
 }
 
 //prepare statement
