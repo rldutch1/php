@@ -151,4 +151,10 @@ echo "<tr><td title='1963-04-01'>Shiela (Smithers) Taylor is: " . dateDiff("now"
 echo "<tr><td title='1968-07-08 10:05:00'>Stanley Holland is: " . dateDiff("now", "1968-07-08 10:05:00") . ".</td></tr>";
 echo "<tr><td title='1964-09-09'>Vernon C. Holland III is: " . dateDiff("now", "1964-09-09 00:00:00") . ".</td></tr>";
 echo "</table>";
+
+//echo "<br />" . dateDiff("now", "1964-09-09 00:00:00") . "<br />";
+//echo(strtotime("+5 hours") . "<br>");
+$thedays = "167";
+$f = strtotime("+167 days");
+echo "<br /><br />Password will expire in " . $thedays . " days from now on: " . date('Y-M-d H:i:s', $f) . "<br />";
 ?>
