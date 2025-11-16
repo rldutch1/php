@@ -5,19 +5,23 @@
 foreach(glob(&quot;{*.png}&quot;,GLOB_BRACE ) as &#36;file) {<br />
 if (strpos(&#36;file, &quot; &quot;) &gt; 0) { //If there are more than 0 spaces in the name.<br />
 &#36;x = &quot;mv \&quot;&quot; . &#36;file . &quot;\&quot; &quot;;<br />
-&#36;y = str_replace(&quot; &quot;, &quot;_&quot;, &#36;file); //Remove spaces.<br />
-&#36;y = str_replace(&quot;,&quot;, &quot;&quot;, &#36;y); //Remove commas.<br />
-&#36;y = str_replace(&quot;=&quot;, &quot;&quot;, &#36;y); //Remove equals.<br />
-&#36;y = str_replace(&quot;;&quot;, &quot;&quot;, &#36;y); //Remove semi-colons.<br />
-&#36;y = str_replace(&quot;&#039;&quot;, &quot;&quot;, &#36;y); //Remove apostrophes.<br />
+&#36;y = str_replace(&quot; &quot;, &quot;_&quot;, &#36;file); //Remove space.<br />
+&#36;y = str_replace(&quot;,&quot;, &quot;&quot;, &#36;y); //Remove comma.<br />
+&#36;y = str_replace(&quot;=&quot;, &quot;&quot;, &#36;y); //Remove equal.<br />
+&#36;y = str_replace(&quot;;&quot;, &quot;&quot;, &#36;y); //Remove semi-colon.<br />
+&#36;y = str_replace(&quot;&#039;&quot;, &quot;&quot;, &#36;y); //Remove apostrophe.<br />
 &#36;y = str_replace(&quot;(&quot;, &quot;&quot;, &#36;y); //Remove left parenthesis.<br />
 &#36;y = str_replace(&quot;)&quot;, &quot;&quot;, &#36;y); //Remove right prenthesis.<br />
-&#36;y = str_replace(&quot;&#36;&quot;, &quot;&quot;, &#36;y); //Remove dollar signs.<br />
-&#36;y = str_replace(&quot;[&quot;, &quot;&quot;, &#36;y); //Remove left brackets.<br />
-&#36;y = str_replace(&quot;]&quot;, &quot;&quot;, &#36;y); //Remove right brackets.<br />
-&#36;y = str_replace(&quot;&amp;&quot;, &quot;&quot;, &#36;y); //Remove ampersands.<br />
+&#36;y = str_replace(&quot;&#36;&quot;, &quot;&quot;, &#36;y); //Remove dollar sign.<br />
+&#36;y = str_replace(&quot;[&quot;, &quot;&quot;, &#36;y); //Remove left bracket.<br />
+&#36;y = str_replace(&quot;]&quot;, &quot;&quot;, &#36;y); //Remove right bracket.<br />
+&#36;y = str_replace(&quot;&amp;&quot;, &quot;&quot;, &#36;y); //Remove ampersand.<br />
 &#36;y = str_replace(&quot;`&quot;, &quot;&quot;, &#36;y); //Remove accent aigou.<br />
 &#36;y = str_replace(&quot;._&quot;, &quot;_&quot;, &#36;y); //Remove period underscore.<br />
+&#36;y = str_replace(&quot;|&quot;, &quot;_&quot;, &#36;y); //Remove pipe.<br />
+&#36;y = str_replace(&quot;/&quot;, &quot;_&quot;, &#36;y); //Remove forward slash.<br />
+&#36;y = str_replace(&quot;:&quot;, &quot;_&quot;, &#36;y); //Remove colon.<br />
+&#36;y = str_replace(&quot;!&quot;, &quot;_&quot;, &#36;y); //Remove exclaimation point.<br />
 <br />
 //echo &quot;mv &quot; . &#36;x . &quot; &quot; . &#36;y . &quot;&lt;br /&gt;&quot;;<br />
 echo &#36;x . &quot; &quot; . &#36;y . &quot;&lt;br /&gt;&quot;;<br />
