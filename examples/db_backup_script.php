@@ -27,7 +27,7 @@ global &#36;dbusername; //Variable is defined outside of the function so it has 
 global &#36;ThePassword;<br />
 echo &quot;mysqldump -u &quot; . &#36;dbusername . &quot; -p\&quot;&quot;. &#36;ThePassword . &quot;\&quot; -c -e &quot; . &#36;value . &quot; &gt; \&#36;TimeStamp.DBDump.&quot; . &#36;value . &quot;.`hostname`.sql&lt;br /&gt;&quot;;<br />
 echo &quot;tar -zcvf \&#36;TimeStamp.DBDump.&quot; . &#36;value . &quot;.`hostname`.sql.gz \&#36;TimeStamp.DBDump.&quot; . &#36;value . &quot;.`hostname`.sql&lt;br /&gt;&quot;;<br />
-//If RAR is installed uncomment below:
+//If RAR is installed uncomment below:<br />
 //echo &quot;rar a -rr \&#36;TimeStamp.DBDump.&quot; . &#36;value . &quot;.`hostname`.sql.rar \&#36;TimeStamp.DBDump.&quot; . &#36;value . &quot;.`hostname`.sql&lt;br /&gt;&quot;;<br />
 }<br />
 <br />
