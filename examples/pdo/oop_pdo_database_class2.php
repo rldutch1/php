@@ -329,4 +329,36 @@ echo &quot;Unexpected error: &quot; . &#36;e-&gt;getMessage();<br />
 }<br />
 }<br />
 This way, if the first query fails, the script jumps to the catch block and never attempts the second query (minecraft_check), preventing orphaned data or further crashes.<br />
+<br /><br />
+------------------------Minecraft Database Tables Used in Above Queries------------------------<br />
+-- Script Author: Robert Holland<br />
+-- Script Name: minecraft.sql<br />
+-- Creation Date: Sat Apr 25 2026 20:44:31 GMT-0700 (MST)<br />
+-- Last Modified:<br />
+-- Copyright (c)2026<br />
+-- Version: 1.0.0<br />
+-- Purpose: Create the minecraft table that is used in the example files.<br />
+-- ----------------------------------------------------------------------------<br />
+use test;<br />
+CREATE TABLE `minecraft` (<br />
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,<br />
+  `coordinate` varchar(100) NOT NULL,<br />
+  `description` varchar(100) NOT NULL,<br />
+  `tstamp` datetime DEFAULT current_timestamp(),<br />
+  `active_ind` int(11) DEFAULT 1,<br />
+  PRIMARY KEY (`id`),<br />
+  UNIQUE KEY `unique_description` (`description`)<br />
+) ENGINE=InnoDB;<br />
+<br />
+CREATE TABLE `minecraft_check` (<br />
+  `id` int(11) NOT NULL AUTO_INCREMENT,<br />
+  `m_id` int(10) unsigned NOT NULL,<br />
+  `description` text DEFAULT NULL,<br />
+  `active_ind` int(11) NOT NULL DEFAULT 1,<br />
+  PRIMARY KEY (`id`),<br />
+  KEY `fk_mcheck` (`m_id`),<br />
+  CONSTRAINT `fk_mcheck` FOREIGN KEY (`m_id`) REFERENCES `minecraft` (`id`) ON DELETE CASCADE ON UPDATE CASCADE<br />
+) ENGINE=InnoDB;<br />
+<br />
+------------------------Minecraft Database Tables Used in Above Queries------------------------
 */"; ?>
