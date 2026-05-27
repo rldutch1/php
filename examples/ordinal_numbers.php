@@ -1,5 +1,5 @@
 <?php
-echo '<?php<br />
+echo '&lt;?php<br />
   function addOrdinalNumberSuffix($num) {<br />
     if (!in_array(($num % 100),array(11,12,13))){<br />
       switch ($num % 10) {//If less than 4 add appropriate ending.<br />
