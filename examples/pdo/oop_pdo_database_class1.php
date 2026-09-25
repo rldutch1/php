@@ -66,6 +66,9 @@ return &#36;this;<br />
 <br />
 /**<br />
 * Updated fetchAll to accept a custom fetch mode<br />
+    fetch() default FETCH_ASSOC<br />
+    fetch(FETCH_NUM)<br />
+    fetch(FETCH_BOTH)<br />
 */<br />
 public function fetchAll(int &#36;fetchMode = null): array<br />
 {<br />
@@ -75,6 +78,9 @@ return &#36;this-&gt;stmt-&gt;fetchAll(&#36;fetchMode ?? PDO::FETCH_ASSOC);<br /
 <br />
 /**<br />
 * Updated fetch to accept a custom fetch mode<br />
+    fetchAll() default FETCH_ASSOC<br />
+    fetchAll(FETCH_NUM)<br />
+    fetchAll(FETCH_BOTH)<br />
 */<br />
 public function fetch(int &#36;fetchMode = null)<br />
 {<br />
@@ -92,7 +98,7 @@ return &#36;this-&gt;pdo-&gt;lastInsertId();<br />
 }<br />
 }<br />
 <br />
-&#36;pw0 = [&#039;localhost&#039;, &#039;test&#039;, &#039;testuser&#039;, &#039;testpa55w0rd&#039;];<br />
+//&#36;pw0 = [&#039;localhost&#039;, &#039;test&#039;, &#039;testuser&#039;, &#039;testpa55w0rd&#039;];<br />
 <br />
 /*<br />
 ----------------<br />
@@ -152,4 +158,6 @@ d. PostgreSQL Users: If you ever switch from MySQL to PostgreSQL, you usually ha
 // 6d. When to use rowCount() instead?<br />
 If you are doing an UPDATE or DELETE, lastInsertId() won&#039;t help you. Instead, use the rowCount() method you already have in your class:<br />
 <br />
-*/"; ?>
+*/<br />
+?&gt;<br />
+"; ?>
