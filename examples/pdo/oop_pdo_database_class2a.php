@@ -10,15 +10,15 @@
 // ----------------------------------------------------------------------------<br />
 // Paste the table below into a separate HTML file to view PHP output examples.<br />
 // ----------------------------------------------------------------------------<br />
-// &lt;br /&gt;<br />
-// &lt;table border=&#039;1&#039;&gt;&lt;caption&gt;Mode - Access - Output&lt;/caption&gt;<br />
-// &lt;tr&gt;&lt;td&gt;Fetch Mode&lt;/td&gt;&lt;td&gt;Access Syntax&lt;/td&gt;&lt;td&gt;Output Structure Example&lt;/td&gt;&lt;/tr&gt;<br />
-// &lt;tr&gt;&lt;td&gt;PDO::FETCH_ASSOC (Default)&lt;/td&gt;&lt;td&gt;&amp;#36;row[&amp;#039;firstname&amp;#039;]&lt;/td&gt;&lt;td&gt;[&amp;#039;firstname&amp;#039; =&amp;gt; &amp;#039;Jane&amp;#039;]&lt;/td&gt;&lt;/tr&gt;<br />
-// &lt;tr&gt;&lt;td&gt;PDO::FETCH_NUM&lt;/td&gt;&lt;td&gt;&amp;#36;row[0]&lt;/td&gt;&lt;td&gt;[0 =&amp;gt; &amp;#039;Jane&amp;#039;]&lt;/td&gt;&lt;/tr&gt;<br />
-// &lt;tr&gt;&lt;td&gt;PDO::FETCH_BOTH&lt;/td&gt;&lt;td&gt;&amp;#36;row[&amp;#039;firstname&amp;#039;] or &amp;#36;row[0]&lt;/td&gt;&lt;td&gt;[&amp;#039;firstname&amp;#039; =&amp;gt; &amp;#039;Jane&amp;#039;, 0 =&amp;gt; &amp;#039;Jane&amp;#039;]&lt;/td&gt;&lt;/tr&gt;<br />
-// &lt;/table&gt;<br />
-// &lt;br /&gt;<br />
-<br />
+//<br />
+//<table border='1'><caption>Mode - Access - Output</caption>
+//<tr><td>Fetch Mode</td><td>Access Syntax</td><td>Output Structure Example - print_r()</td></tr>
+//<tr><td>PDO::FETCH_ASSOC (Default)</td><td>&#36;row[&#039;firstname&#039;]</td><td>[&#039;firstname&#039; =&gt; &#039;Jane&#039;]</td></tr>
+//<tr><td>PDO::FETCH_NUM</td><td>&#36;row[0]</td><td>[0 =&gt; &#039;Jane&#039;]</td></tr>
+//<tr><td>PDO::FETCH_BOTH</td><td>&#36;row[&#039;firstname&#039;] or &#36;row[0]</td><td>[&#039;firstname&#039; =&gt; &#039;Jane&#039;, 0 =&gt; &#039;Jane&#039;]</td></tr>
+//</table>
+//<br />
+
 require_once(&quot;oop_pdo_database_class1.php&quot;);<br />
 <br />
 try {<br />
